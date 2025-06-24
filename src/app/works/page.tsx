@@ -1,9 +1,11 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion } from 'motion/react'
+import React from "react";
+import { motion } from "motion/react";
 
-const WorksPage: React.FC = ()=> {
+import Slider from "@/components/atoms/Slider";
+
+const WorksPage: React.FC = () => {
   return (
     <motion.div
       key="works"
@@ -12,17 +14,12 @@ const WorksPage: React.FC = ()=> {
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.5 }}
     >
-      <main>
+      <main className="min-h-dvh">
         <h1>WROKS</h1>
-        <ul>
-          <li>project01</li>
-          <li>project02</li>
-          <li>project03</li>
-          <li>project04</li>
-        </ul>
+        <Slider />
       </main>
     </motion.div>
-  )
-}
+  );
+};
 
 export default WorksPage;

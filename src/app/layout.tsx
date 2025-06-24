@@ -11,10 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "K.Miyazaki portfolio 2025",
-  description: "Kneta Miyazaki ポートフォリオ2025。Next.jsとthree.jsで素敵なサイトを作ります。",
+  description:
+    "Kneta Miyazaki ポートフォリオ2025。Next.jsとthree.jsで素敵なサイトを作ります。",
   icons: {
-    icon: '/favicon.ico'
-  }
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -27,9 +28,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navigation />
         <CanvasWrapper />
-        <AnimatePresence mode="wait">
-          {children}
-        </AnimatePresence>
+        <AnimatePresence mode="wait">{children}</AnimatePresence>
       </body>
     </html>
   );
