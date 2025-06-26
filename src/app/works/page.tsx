@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-import Slider from "@/components/atoms/Slider";
+import Carousel from "@/components/organisms/Carousel";
 
 const WorksPage: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const WorksPage: React.FC = () => {
     >
       <main className="min-h-dvh">
         <h1>WROKS</h1>
-        <Slider />
+        <Carousel />
       </main>
     </motion.div>
   );
