@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import React from 'react';
-import { motion } from 'motion/react'
+import React from "react";
+import { motion } from "motion/react";
 
-const TopPage: React.FC = ()=> {
+const TopPage: React.FC = () => {
   return (
     <motion.div
       key="home"
@@ -17,6 +17,6 @@ const TopPage: React.FC = ()=> {
       </main>
     </motion.div>
   );
-}
+};
 
 export default TopPage;

@@ -9,10 +9,13 @@ const Slider = () => {
   const [emblaRef] = useEmblaCarousel({
     loop: true,
     dragFree: true,
-  })
+  });
 
   return (
-    <div className="overflow-hidden fixed bottom-0 left-0 w-full" ref={emblaRef}>
+    <div
+      className="overflow-hidden fixed bottom-0 left-0 w-full"
+      ref={emblaRef}
+    >
       <div className="flex">
         <Slide text="Slide 1" />
         <Slide text="Slide 2" />

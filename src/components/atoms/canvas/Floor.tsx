@@ -5,5 +5,5 @@ export default function Floor() {
       {/* <meshStandardMaterial color="white" /> */}
       <shadowMaterial />
     </mesh>
-  )
+  );
 }

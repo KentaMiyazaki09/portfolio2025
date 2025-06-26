@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion } from 'motion/react'
+import React from "react";
+import { motion } from "motion/react";
 
-const AboutPage: React.FC = ()=> {
+const AboutPage: React.FC = () => {
   return (
     <motion.div
       key="works"
@@ -18,7 +18,7 @@ const AboutPage: React.FC = ()=> {
         <p>Next.js, three.js, blender</p>
       </main>
     </motion.div>
-  )
-}
+  );
+};
 
 export default AboutPage;
