@@ -25,9 +25,3 @@ body {
   line-height: 1.5;
   overflow: hidden;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}

@@ -12,9 +12,9 @@ const TopPage: React.FC = () => {
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.5 }}
     >
-      <main className="">
-        <h1>K.Miyazaki PORTFOLIO</h1>
-      </main>
+      <h1 className="fixed top-0 left-0 opacity-0 pointer-events-none">
+        K.Miyazaki PORTFOLIO
+      </h1>
     </motion.div>
   );
 };

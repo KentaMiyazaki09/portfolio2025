@@ -18,11 +18,11 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-[20px] right-[20px] z-10">
+    <nav className="fixed top-[20px] right-[10px] z-10">
       <ul>
         {links.map((link) => (
           <li key={link.href} className="relative">
-            <Link href={link.href} className="text-white text-xl pl-2">
+            <Link href={link.href} className="text-lx pl-2 font-semibold">
               {link.label}
               {pathname === link.href ? (
                 <motion.div
