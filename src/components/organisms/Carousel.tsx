@@ -2,24 +2,35 @@
 
 import React from "react";
 
-import useEmblaCarousel from "embla-carousel-react";
-import Slide from "../atoms/Slide";
+import { Card, CardContent } from "@/components/ui/card";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Slider = () => {
-  const [emblaRef] = useEmblaCarousel({
-    loop: true,
-    dragFree: true,
-  });
-
   return (
-    <div
-      className="overflow-hidden fixed bottom-0 left-0 w-full"
-      ref={emblaRef}
-    >
-      <div className="flex">
-        <Slide text="Slide 1" />
-        <Slide text="Slide 2" />
-        <Slide text="Slide 3" />
+    <div className="fixed bottom-0 left-0 w-full z-50">
+      <div className="relative px-8">
+        <Carousel className="custom-carousel">
+          <CarouselContent className="-ml-4">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem key={index} className="basis-1/3">
+                <Card>
+                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <span className="text-2xl font-semibold">{index + 1}</span>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="-left-8" />
+          <CarouselNext className="-right-8" />
+        </Carousel>
       </div>
     </div>
   );
