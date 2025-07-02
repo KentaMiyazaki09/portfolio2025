@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`inter.className text-base tracking-wider tracking-wider`}
+        className={`inter.className text-base tracking-wider text-neutral-50`}
       >
         <Navigation />
         <CanvasWrapper />

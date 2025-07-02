@@ -3,19 +3,28 @@
 import React from "react";
 import { motion } from "motion/react";
 
-const TopPage: React.FC = () => {
+import Styles from "@/styles/page.module.css";
+
+const TopPage = () => {
   return (
-    <motion.div
-      key="home"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 10 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h1 className="fixed top-0 left-0 opacity-0 pointer-events-none">
-        K.Miyazaki PORTFOLIO
-      </h1>
-    </motion.div>
+    <div className="fixed top-[50%] translate-y-[-50%] left-[16px] md:left-[32px]">
+      <motion.div
+        key="home"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-lg md:text-2xl font-semibold tracking-widest [text-shadow:2px_2px_0_black] opacity-80 mb-3">
+          KENTA MIYAZAKI
+        </h1>
+        <p className="text-3xl md:text-5xl font-extrabold [text-shadow:2px_2px_0_black]">
+          <span className={Styles.hasBorder}>Front Developer</span>
+          <br />
+          3D <span className="opacity-80">&</span> Web
+        </p>
+      </motion.div>
+    </div>
   );
 };
 

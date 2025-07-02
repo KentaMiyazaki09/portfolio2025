@@ -1,0 +1,14 @@
+.hasBorder {
+  position: relative;
+}
+
+.hasBorder::after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 2px);
+  left: calc(100% + 10px);
+  width: 50px;
+  height: 1px;
+  background-color: #fafafa;
+  opacity: 0.6;
+}
