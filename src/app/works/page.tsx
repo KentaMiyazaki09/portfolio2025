@@ -4,10 +4,17 @@ import React from "react";
 import { motion } from "motion/react";
 
 import PageTtl from "@/components/atoms/PageTtl";
+import WorksList from "@/components/organisms/WorksList";
 
-import Carousel from "@/components/organisms/Carousel";
+const list = [
+  {
+    id: "hoge01010",
+    ttl: "works01",
+    img: "works01.jpg",
+  },
+];
 
-const WorksPage: React.FC = () => {
+const WorksPage = () => {
   return (
     <>
       <PageTtl text="WROKS" />
@@ -19,7 +26,7 @@ const WorksPage: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         <main className="min-h-dvh">
-          <Carousel />
+          <WorksList list={list} />
         </main>
       </motion.div>
     </>
