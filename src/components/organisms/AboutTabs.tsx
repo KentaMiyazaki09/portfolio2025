@@ -18,7 +18,7 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const AboutTabs = () => (
-  <div className="flex w-full flex-col gap-4">
+  <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
     <Tabs defaultValue="AboutMe">
       <TabsList className="bg-[oklch(.200_0_0)] text-neutral-400">
         <TabsTrigger value="AboutMe">About Me</TabsTrigger>
