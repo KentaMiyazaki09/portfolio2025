@@ -13,6 +13,7 @@ import {
   Box,
   ToolCase,
   GraduationCap,
+  Columns3Cog,
 } from "lucide-react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -31,16 +32,13 @@ const AboutTabs = () => (
           </CardHeader>
           <CardContent className="grid gap-5">
             <div className="grid">
-              <div className="flex">
+              <div className="flex items-center">
                 <div className="mr-3 text-neutral-100">
                   <h2 className="font-bold">宮崎 健太</h2>
                   <p className="text-xs font-semibold">KENTA MIYAZAKI</p>
                 </div>
                 <Avatar>
-                  <AvatarImage
-                    src="/avatar.jpg"
-                    className="object-cover rounded-full"
-                  />
+                  <AvatarImage src="/avatar.jpg" className="object-cover" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </div>
@@ -68,9 +66,7 @@ const AboutTabs = () => (
               <CardDescription className="text-xs text-neutral-300">
                 1995年生まれ。フロントエンジニア。
                 <br />
-                アイデアを「見せる・感じる」かたちにすることが好きです。
-                <br />
-                新たなWEB表現を求め、3Dアニメーションを勉強中。
+                アイデアを「かたち」で表現するのが好きです。新たなWEB表現を求め、Blender・3Dアニメーションを勉強中。
               </CardDescription>
             </div>
           </CardContent>
@@ -109,7 +105,22 @@ const AboutTabs = () => (
                 フレームワーク
               </Label>
               <CardDescription className="text-xs text-neutral-300">
-                React, Next.js, Tailwind CSS, Wordpress
+                React, Next.js, Tailwind CSS
+              </CardDescription>
+            </div>
+            <div className="grid gap-2">
+              <Label className="text-sm flex align-middle">
+                <Columns3Cog
+                  className="mr-1"
+                  size={20}
+                  strokeWidth={1.5}
+                  absoluteStrokeWidth
+                  color="#bbbf82"
+                />
+                CMS
+              </Label>
+              <CardDescription className="text-xs text-neutral-300">
+                Wordpress, MovableType7
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -155,7 +166,7 @@ const AboutTabs = () => (
                 勉強中
               </Label>
               <CardDescription className="text-xs text-neutral-300">
-                GLSL, Advanced Blender, Advanced React
+                GLSL, Advanced Blender and three.js, Advanced React
               </CardDescription>
             </div>
           </CardContent>
