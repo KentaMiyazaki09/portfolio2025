@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  other: {
+    "vercel-toolbar": "disable",
+  },
 };
 
 export default function RootLayout({
