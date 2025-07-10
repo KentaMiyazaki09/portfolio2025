@@ -2,31 +2,29 @@
 
 import { List } from "lucide-react";
 
+import { useSharedState } from "@/context/SharedStateProvider";
+
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { Work } from "@/types/types";
 import React from "react";
+import Image from "next/image";
 
 type Props = {
   list: Work[];
 };
 
 const WorksList: React.FC<Props> = ({ list }) => {
+  const { setSelectedId } = useSharedState();
+
   return (
     <div className="fixed top-[80px] right-[18px] z-50s">
       <Popover>
@@ -42,16 +40,17 @@ const WorksList: React.FC<Props> = ({ list }) => {
         >
           <ScrollArea className="h-72 text-neutral-200 rounded-md border">
             <Table className="bg-[oklch(.200_0_0)]">
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="text-neutral-50">img</TableHead>
-                  <TableHead className="text-neutral-50">ttl</TableHead>
-                </TableRow>
-              </TableHeader>
               <TableBody className="">
                 {list.map(({ id, ttl, img }) => (
-                  <TableRow key={id}>
-                    <TableCell>{img}</TableCell>
+                  <TableRow key={id} onClick={() => setSelectedId(id)}>
+                    <TableCell>
+                      <Image
+                        src={`/list/${img}`}
+                        width={150}
+                        height={150}
+                        alt="Picture of the author"
+                      />
+                    </TableCell>
                     <TableCell>{ttl}</TableCell>
                   </TableRow>
                 ))}
