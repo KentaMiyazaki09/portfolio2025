@@ -7,6 +7,8 @@ import CanvasWrapper from "@/components/organisms/CanvasWrapper";
 
 import { AnimatePresence } from "motion/react";
 
+import { SharedStateProvider } from "@/context/SharedStateProvider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -31,9 +33,11 @@ export default function RootLayout({
       <body
         className={`inter.className text-base text-neutral-50 leading-[1.7] tracking-widest`}
       >
-        <Navigation />
-        <CanvasWrapper />
-        <AnimatePresence mode="wait">{children}</AnimatePresence>
+        <SharedStateProvider>
+          <Navigation />
+          <CanvasWrapper />
+          <AnimatePresence mode="wait">{children}</AnimatePresence>
+        </SharedStateProvider>
       </body>
     </html>
   );
