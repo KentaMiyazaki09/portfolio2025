@@ -92,3 +92,8 @@ body {
 .custom-carousel > div {
   overflow: visible !important;
 }
+
+/* vercel toolbar を非表示 */
+#vercel-toolbar-container {
+  display: none !important;
+}

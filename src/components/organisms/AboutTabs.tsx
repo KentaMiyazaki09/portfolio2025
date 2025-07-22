@@ -66,7 +66,7 @@ const AboutTabs = () => (
               <CardDescription className="text-xs text-neutral-300">
                 1995年生まれ。フロントエンジニア。
                 <br />
-                アイデアを「かたち」で表現するのが好きです。新たなWEB表現を求め、Blender・3Dアニメーションを勉強中。
+                アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。新たなWEB表現を求め、Blender・3Dアニメーションを勉強中。
               </CardDescription>
             </div>
           </CardContent>
