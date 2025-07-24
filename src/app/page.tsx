@@ -15,10 +15,10 @@ const TopPage = () => {
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-lg md:text-2xl font-semibold tracking-widest [text-shadow:2px_2px_0_black] opacity-80 mb-3">
+        <h1 className="text-[clamp(1.125rem,1.875vw,1.5rem)] font-semibold tracking-widest [text-shadow:2px_2px_0_black] opacity-80 mb-3">
           KENTA MIYAZAKI
         </h1>
-        <p className="text-3xl md:text-5xl font-extrabold [text-shadow:2px_2px_0_black]">
+        <p className="text-[clamp(1.875rem,3.75vw,3rem)] leading-[1.2] font-extrabold [text-shadow:2px_2px_0_black]">
           <span className={Styles.hasBorder}>Front Developer</span>
           <br />
           3D <span className="opacity-80">&</span> Web

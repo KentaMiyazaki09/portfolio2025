@@ -29,7 +29,10 @@ const Navigation: React.FC = () => {
         {links.map((link) => (
           <NavigationMenuItem key={link.href} className="relative mr-2 md:mr-3">
             <NavigationMenuLink asChild>
-              <Link href={link.href} className="text-[11px] md:text-[14px]">
+              <Link
+                href={link.href}
+                className="text-[clamp(0.75rem,2.5vw,1.2rem)]"
+              >
                 {link.label}
                 {pathname === link.href ? (
                   <motion.div

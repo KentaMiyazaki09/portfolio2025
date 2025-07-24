@@ -22,8 +22,18 @@ const AboutTabs = () => (
   <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
     <Tabs defaultValue="AboutMe">
       <TabsList className="bg-[oklch(.200_0_0)] text-neutral-400">
-        <TabsTrigger value="AboutMe">About Me</TabsTrigger>
-        <TabsTrigger value="Skills">Skills</TabsTrigger>
+        <TabsTrigger
+          value="AboutMe"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal"
+        >
+          About Me
+        </TabsTrigger>
+        <TabsTrigger
+          value="Skills"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal"
+        >
+          Skills
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="AboutMe">
         <Card className="bg-[oklch(.200_0_0)] text-neutral-50">
@@ -33,9 +43,13 @@ const AboutTabs = () => (
           <CardContent className="grid gap-5">
             <div className="grid">
               <div className="flex items-center">
-                <div className="mr-3 text-neutral-100">
-                  <h2 className="font-bold">宮崎 健太</h2>
-                  <p className="text-xs font-semibold">KENTA MIYAZAKI</p>
+                <div className="mr-6 text-neutral-100">
+                  <h2 className="font-bold text-[clamp(1.3rem,2.28vw,1.8rem)]">
+                    宮崎 健太
+                  </h2>
+                  <p className="font-semibold text-[clamp(0.7em,1.26vw,1.0rem)]">
+                    KENTA MIYAZAKI
+                  </p>
                 </div>
                 <Avatar>
                   <AvatarImage src="/avatar.jpg" className="object-cover" />
@@ -63,7 +77,7 @@ const AboutTabs = () => (
               </div>
             </div>
             <div className="grid gap-3">
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-300">
                 1995年生まれ。フロントエンジニア。
                 <br />
                 アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。新たなWEB表現を求め、Blender・3Dアニメーションを勉強中。
@@ -79,7 +93,7 @@ const AboutTabs = () => (
           </CardHeader>
           <CardContent className="grid gap-6">
             <div className="grid gap-2">
-              <Label className="text-sm flex align-middle">
+              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
                 <Globe
                   className="mr-1"
                   size={20}
@@ -87,14 +101,14 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#3654ce"
                 />
-                開発言語
+                <span>開発言語</span>
               </Label>
               <CardDescription className="text-xs text-neutral-300">
                 HTML, CSS, JavaScript, TypeScript
               </CardDescription>
             </div>
             <div className="grid gap-2">
-              <Label className="text-sm flex align-middle">
+              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
                 <SquareDashedBottomCode
                   className="mr-1"
                   size={20}
@@ -104,12 +118,12 @@ const AboutTabs = () => (
                 />
                 フレームワーク
               </Label>
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 React, Next.js, Tailwind CSS
               </CardDescription>
             </div>
             <div className="grid gap-2">
-              <Label className="text-sm flex align-middle">
+              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
                 <Columns3Cog
                   className="mr-1"
                   size={20}
@@ -119,12 +133,12 @@ const AboutTabs = () => (
                 />
                 CMS
               </Label>
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 Wordpress, MovableType7
               </CardDescription>
             </div>
             <div className="grid gap-2">
-              <Label className="text-sm flex align-middle">
+              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
                 <Box
                   className="mr-1"
                   size={20}
@@ -134,12 +148,12 @@ const AboutTabs = () => (
                 />
                 3D
               </Label>
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 Three.js, WebGL, Blender
               </CardDescription>
             </div>
             <div className="grid gap-2">
-              <Label className="text-sm flex align-middle">
+              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
                 <ToolCase
                   className="mr-1"
                   size={20}
@@ -149,13 +163,13 @@ const AboutTabs = () => (
                 />
                 開発ツール
               </Label>
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 WindowsPC/MackBook, Github, VSCode, Figma, Photoshop,
                 Illustrator, ChatGPT
               </CardDescription>
             </div>
             <div className="grid gap-2">
-              <Label className="text-sm flex align-middle">
+              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
                 <GraduationCap
                   className="mr-1"
                   size={20}
@@ -165,7 +179,7 @@ const AboutTabs = () => (
                 />
                 勉強中
               </Label>
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 GLSL, Advanced Blender and three.js, Advanced React
               </CardDescription>
             </div>

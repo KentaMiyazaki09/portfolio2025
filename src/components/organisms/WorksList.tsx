@@ -51,7 +51,7 @@ const WorksList: React.FC<Props> = ({ list }) => {
                         alt="Picture of the author"
                       />
                     </TableCell>
-                    <TableCell>{ttl}</TableCell>
+                    <TableCell className="text-ls md:text-lg">{ttl}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
