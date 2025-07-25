@@ -16,6 +16,7 @@ import {
   Columns3Cog,
 } from "lucide-react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
+import { SiZenn } from "react-icons/si";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const AboutTabs = () => (
@@ -52,7 +53,11 @@ const AboutTabs = () => (
                   </p>
                 </div>
                 <Avatar>
-                  <AvatarImage src="/avatar.jpg" className="object-cover" />
+                  <AvatarImage
+                    src="/avatar.jpg"
+                    className="object-cover"
+                    loading="eager"
+                  />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </div>
@@ -66,6 +71,14 @@ const AboutTabs = () => (
                   rel="noopener noreferrer"
                 >
                   <FaGithub size={25} color="#3654ce" />
+                </a>
+                <a
+                  className="mr-3"
+                  href="https://zenn.dev/nekoengineer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiZenn size={24} color="#3EA8FF" />
                 </a>
                 <a
                   href="https://instagram.com/kmiyazaki09"

@@ -49,6 +49,7 @@ const WorksList: React.FC<Props> = ({ list }) => {
                         width={150}
                         height={150}
                         alt="Picture of the author"
+                        loading="eager"
                       />
                     </TableCell>
                     <TableCell className="text-ls md:text-lg">{ttl}</TableCell>
