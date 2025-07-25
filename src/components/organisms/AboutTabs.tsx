@@ -80,7 +80,7 @@ const AboutTabs = () => (
               <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-300">
                 1995年生まれ。フロントエンジニア。
                 <br />
-                アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。新たなWEB表現を求め、Blender・3Dアニメーションを勉強中。
+                アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。新たな表現を求め、Blender・3Dアニメーションを勉強中。
               </CardDescription>
             </div>
           </CardContent>
@@ -101,10 +101,10 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#3654ce"
                 />
-                <span>開発言語</span>
+                <span>使用言語 / Languages</span>
               </Label>
               <CardDescription className="text-xs text-neutral-300">
-                HTML, CSS, JavaScript, TypeScript
+                HTML / CSS / JavaScript / TypeScript
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -116,10 +116,10 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#e2747a"
                 />
-                フレームワーク
+                フレームワーク / Frameworks
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                React, Next.js, Tailwind CSS
+                React / Next.js / Tailwind CSS
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -131,10 +131,10 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#bbbf82"
                 />
-                CMS
+                その他のスキル / Other Skills
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                Wordpress, MovableType7
+                MovableType7 / WordPress / PHP / Shopify
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -149,7 +149,7 @@ const AboutTabs = () => (
                 3D
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                Three.js, WebGL, Blender
+                Three.js / WebGL / Blender
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -161,11 +161,11 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#b074e2"
                 />
-                開発ツール
+                開発環境・ツール / Tools
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                WindowsPC/MackBook, Github, VSCode, Figma, Photoshop,
-                Illustrator, ChatGPT
+                WindowsPC / MacBook / GitHub / VSCode / Figma / Photoshop /
+                Illustrator / ChatGPT
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -177,10 +177,10 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#bababa"
                 />
-                勉強中
+                学習中 / Currently Learning
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                GLSL, Advanced Blender and three.js, Advanced React
+                Advanced Blender / Three.js / React
               </CardDescription>
             </div>
           </CardContent>
