@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { SiZenn } from "react-icons/si";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
+import Image from "next/image";
 
 const AboutTabs = () => (
   <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
@@ -52,13 +53,15 @@ const AboutTabs = () => (
                     KENTA MIYAZAKI
                   </p>
                 </div>
-                <Avatar>
-                  <AvatarImage
+                <Avatar className="w-16 h-16">
+                  <Image
                     src="/avatar.jpg"
-                    className="object-cover"
-                    loading="eager"
+                    width={64}
+                    height={64}
+                    alt="Avatar"
+                    className="rounded-full object-cover"
+                    priority
                   />
-                  <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </div>
             </div>
