@@ -12,9 +12,9 @@ import { SharedStateProvider } from "@/context/SharedStateProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "K.Miyazaki portfolio 2025",
+  title: "K.Miyazaki portfolio",
   description:
-    "Kneta Miyazaki ポートフォリオ2025。Next.jsとthree.jsで素敵なサイトを作ります。",
+    "Kenta Miyazaki ポートフォリオ。Next.jsとthree.jsで素敵なサイトを作ります。",
   icons: {
     icon: "/favicon.ico",
   },
