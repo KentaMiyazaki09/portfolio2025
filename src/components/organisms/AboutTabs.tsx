@@ -117,7 +117,7 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#3654ce"
                 />
-                <span>使用言語 / Languages</span>
+                <span>Languages</span>
               </Label>
               <CardDescription className="text-xs text-neutral-300">
                 HTML / CSS / JavaScript / TypeScript
@@ -132,7 +132,7 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#e2747a"
                 />
-                フレームワーク / Frameworks
+                Frameworks
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 React / Next.js / Tailwind CSS
@@ -147,7 +147,7 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#bbbf82"
                 />
-                その他のスキル / Other Skills
+                Other Skills
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 MovableType7 / WordPress / PHP / Shopify
@@ -177,7 +177,7 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#b074e2"
                 />
-                開発環境・ツール / Tools
+                Tools
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 WindowsPC / MacBook / GitHub / VSCode / Figma / Photoshop /
@@ -193,7 +193,7 @@ const AboutTabs = () => (
                   absoluteStrokeWidth
                   color="#bababa"
                 />
-                学習中 / Currently Learning
+                Currently Learning...
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
                 Advanced Blender / Three.js / React
