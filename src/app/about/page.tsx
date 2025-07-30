@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.5 }}
-        className="fixed bottom-[0px] left-[0px] p-4 w-full"
+        className="fixed bottom-[0px] left-[0px] p-4 w-full z-10"
       >
         <AboutTabs />
       </motion.div>

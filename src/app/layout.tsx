@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navigation from "@/components/layouts/Navigation";
 import CanvasWrapper from "@/components/organisms/CanvasWrapper";
+import ClickParticles from "@/components/atoms/canvas/ClickParticles";
 
 import { AnimatePresence } from "motion/react";
 
@@ -33,11 +34,14 @@ export default function RootLayout({
       <body
         className={`${inter.className} text-[clamp(1.0rem,1.9vw,1.5rem)] text-neutral-50 leading-[1.7] tracking-widest`}
       >
-        <SharedStateProvider>
-          <Navigation />
-          <CanvasWrapper />
-          <AnimatePresence mode="wait">{children}</AnimatePresence>
-        </SharedStateProvider>
+        <>
+          <SharedStateProvider>
+            <Navigation />
+            <CanvasWrapper />
+            <AnimatePresence mode="wait">{children}</AnimatePresence>
+          </SharedStateProvider>
+          <ClickParticles />
+        </>
       </body>
     </html>
   );

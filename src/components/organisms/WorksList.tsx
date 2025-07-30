@@ -26,7 +26,7 @@ const WorksList: React.FC<Props> = ({ list }) => {
   const { setSelectedId } = useSharedState();
 
   return (
-    <div className="fixed top-[80px] right-[18px] z-50s">
+    <div className="fixed top-[80px] right-[18px] z-10">
       <Popover>
         <PopoverTrigger className="inline-flex items-center justify-center rounded-full border border-white p-2 data-[state=open]:bg-white/10 data-[state=open]:shadow-inner transition">
           <List className="w-5 h-5 text-white" />
@@ -39,8 +39,8 @@ const WorksList: React.FC<Props> = ({ list }) => {
           className="p-[0]"
         >
           <ScrollArea className="h-72 text-neutral-200 rounded-md border">
-            <Table className="bg-[oklch(.200_0_0)]">
-              <TableBody className="">
+            <Table className="bg-black/20 backdrop-blur-sm">
+              <TableBody>
                 {list.map(({ id, ttl, img }) => (
                   <TableRow key={id} onClick={() => setSelectedId(id)}>
                     <TableCell>
