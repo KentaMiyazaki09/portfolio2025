@@ -15,7 +15,8 @@ import {
   GraduationCap,
   Columns3Cog,
 } from "lucide-react";
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { SiZenn } from "react-icons/si";
 import { Avatar } from "@/components/ui/avatar";
 import Image from "next/image";
@@ -84,11 +85,11 @@ const AboutTabs = () => (
                   <SiZenn size={24} color="#3EA8FF" />
                 </a>
                 <a
-                  href="https://instagram.com/kmiyazaki09"
+                  href="https://x.com/k_miyazaki09"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram size={25} color="#b074e2" />
+                  <FaXTwitter size={25} color="#f0f0f0" />
                 </a>
               </div>
             </div>
