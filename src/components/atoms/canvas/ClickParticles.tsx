@@ -32,7 +32,7 @@ export default function ClickParticles() {
           },
           particles: {
             shape: {
-              type: ["square", "circle", "triangle"],
+              type: ["circle"],
             },
             color: {
               value: {
@@ -42,7 +42,7 @@ export default function ClickParticles() {
               },
             },
             size: {
-              value: { min: 6, max: 15 },
+              value: { min: 4, max: 20 },
             },
             move: {
               enable: true,
@@ -51,7 +51,7 @@ export default function ClickParticles() {
               outModes: "destroy",
             },
             opacity: {
-              value: 0.7,
+              value: 0.4,
             },
           },
           interactivity: {

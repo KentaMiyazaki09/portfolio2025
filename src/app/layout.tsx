@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "K.Miyazaki portfolio",
   description:
-    "Kenta Miyazaki ポートフォリオ。Next.jsとthree.jsで素敵なサイトを作ります。",
+    "Kenta Miyazaki ポートフォリオ。1995年生まれ。フロントエンジニア。アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。新たな表現を求め、Blender・3Dアニメーションを勉強中。",
   icons: {
     icon: "/favicon.ico",
   },

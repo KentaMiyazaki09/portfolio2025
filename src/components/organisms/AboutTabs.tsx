@@ -39,7 +39,7 @@ const AboutTabs = () => (
         </TabsTrigger>
       </TabsList>
       <TabsContent value="AboutMe">
-        <Card className="bg-black/20 backdrop-blur-sm text-neutral-50">
+        <Card className="will-change-[backdrop-filter] bg-black/20 backdrop-blur-sm text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">About Me</CardTitle>
           </CardHeader>
@@ -104,7 +104,7 @@ const AboutTabs = () => (
         </Card>
       </TabsContent>
       <TabsContent value="Skills">
-        <Card className="bg-black/50 backdrop-blur-sm text-neutral-50">
+        <Card className="will-change-[backdrop-filter] bg-black/20 backdrop-blur-sm text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">Skills</CardTitle>
           </CardHeader>
