@@ -17,7 +17,7 @@ export default function ClickParticles() {
   }, []);
 
   const particlesLoaded = async (container?: Container) => {
-    console.log(container);
+    // console.log(container);
   };
 
   if (init) {
@@ -32,22 +32,26 @@ export default function ClickParticles() {
           },
           particles: {
             shape: {
-              type: "circle",
+              type: ["square", "circle", "triangle"],
             },
             color: {
-              value: "#ffffff",
+              value: {
+                h: { min: 0, max: 360 },
+                s: 80,
+                l: 60,
+              },
             },
             size: {
-              value: 5,
+              value: { min: 6, max: 15 },
             },
             move: {
               enable: true,
-              speed: 3,
+              speed: { min: 2, max: 7 },
               direction: "none",
               outModes: "destroy",
             },
             opacity: {
-              value: 1,
+              value: 0.7,
             },
           },
           interactivity: {
@@ -59,7 +63,7 @@ export default function ClickParticles() {
             },
             modes: {
               push: {
-                quantity: 10,
+                quantity: { min: 2, max: 10 },
               },
             },
           },
