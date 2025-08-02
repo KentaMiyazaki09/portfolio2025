@@ -3,6 +3,8 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
+import { OrbitControls } from "@react-three/drei";
+
 import Model from "../atoms/canvas/GLTFModel";
 import Floor from "../atoms/canvas/Floor";
 
@@ -33,6 +35,18 @@ const CanvasWrapper: React.FC = () => {
           <Model key={selectedId} url={`/glb/${selectedId}.glb`} />
           <Floor />
         </Suspense>
+
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          enableDamping={true}
+          dampingFactor={0.05}
+          rotateSpeed={0.5}
+          minPolarAngle={Math.PI / 180} // 下方向の制限
+          maxPolarAngle={(Math.PI / 180) * 100} // 上方向の制限
+          minAzimuthAngle={-Math.PI / 3} // 左への回転制限
+          maxAzimuthAngle={Math.PI / 3} // 右への回転制限
+        />
       </Canvas>
     </div>
   );

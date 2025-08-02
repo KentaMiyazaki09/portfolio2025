@@ -23,6 +23,7 @@ export default function ClickParticles() {
   if (init) {
     return (
       <Particles
+        className="pointer-events-none"
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={{
