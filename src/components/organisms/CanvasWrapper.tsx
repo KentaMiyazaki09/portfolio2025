@@ -19,17 +19,17 @@ const CanvasWrapper: React.FC = () => {
     <div className={styles.wrapper}>
       <Canvas shadows camera={{ position: [2.5, 2, 20], fov: 45 }}>
         <directionalLight
-          position={[0.7, 5, 6]}
-          intensity={2}
+          position={[0, 10, 2]}
+          intensity={1.5}
           castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-near={1}
-          shadow-camera-far={20}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+          shadow-camera-near={0.1}
+          shadow-camera-far={50}
+          shadow-camera-left={-30}
+          shadow-camera-right={30}
+          shadow-camera-top={30}
+          shadow-camera-bottom={-30}
         />
         <Suspense fallback={null}>
           <Model key={selectedId} url={`/glb/${selectedId}.glb`} />

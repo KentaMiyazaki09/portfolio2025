@@ -19,6 +19,7 @@ const Model: React.FC<ModalProps> = ({ url }) => {
         gltf.scene.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             child.castShadow = true;
+            // child.receiveShadow = true;
           }
         });
         setModel(gltf.scene);
