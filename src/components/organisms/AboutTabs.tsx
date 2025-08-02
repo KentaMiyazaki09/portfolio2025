@@ -24,7 +24,7 @@ import Image from "next/image";
 const AboutTabs = () => (
   <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
     <Tabs defaultValue="AboutMe">
-      <TabsList className="bg-[oklch(.200_0_0)] text-neutral-400">
+      <TabsList className="bg-black/20 backdrop-blur-sm text-neutral-400">
         <TabsTrigger
           value="AboutMe"
           className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal"
@@ -39,7 +39,7 @@ const AboutTabs = () => (
         </TabsTrigger>
       </TabsList>
       <TabsContent value="AboutMe">
-        <Card className="bg-[oklch(.200_0_0)] text-neutral-50">
+        <Card className="will-change-[backdrop-filter] bg-black/20 backdrop-blur-sm text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">About Me</CardTitle>
           </CardHeader>
@@ -104,7 +104,7 @@ const AboutTabs = () => (
         </Card>
       </TabsContent>
       <TabsContent value="Skills">
-        <Card className="bg-[oklch(.200_0_0)] text-neutral-50">
+        <Card className="will-change-[backdrop-filter] bg-black/20 backdrop-blur-sm text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">Skills</CardTitle>
           </CardHeader>
