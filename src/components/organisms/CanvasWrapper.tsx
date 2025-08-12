@@ -16,7 +16,7 @@ const CanvasWrapper: React.FC = () => {
   const { selectedId } = useSharedState();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} z-10`}>
       <Canvas shadows camera={{ position: [2.5, 2, 20], fov: 45 }}>
         <directionalLight
           position={[0, 10, 2]}

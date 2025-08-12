@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { Container } from "@tsparticles/engine";
+import type { Container, ISourceOptions } from "@tsparticles/engine";
 
 export default function BgParticles() {
   const [init, setInit] = useState(false);
@@ -20,45 +20,50 @@ export default function BgParticles() {
     // console.log(container);
   };
 
+  const options: ISourceOptions = useMemo(
+    () => ({
+      background: { color: "transparent" },
+      fullScreen: { enable: true },
+      particles: {
+        number: { value: 50 },
+        color: { value: "#00ffff" },
+        shape: { type: "edge" },
+        opacity: {
+          value: 0.3,
+          animation: {
+            enable: true,
+            speed: 1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 2,
+        },
+        links: {
+          enable: true,
+          distance: 100,
+          color: "#00ffff",
+          opacity: 0.1,
+          width: 1.0,
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          outModes: "out",
+        },
+      },
+    }),
+    []
+  );
+
   if (init) {
     return (
       <Particles
         id="tsparticles_bg"
         particlesLoaded={particlesLoaded}
-        options={{
-          background: { color: "transparent" },
-          fullScreen: { enable: true },
-          particles: {
-            number: { value: 50 },
-            color: { value: "#00ffff" },
-            shape: { type: "edge" },
-            opacity: {
-              value: 0.3,
-              animation: {
-                enable: true,
-                speed: 1,
-                sync: false,
-              },
-            },
-            size: {
-              value: 2,
-            },
-            links: {
-              enable: true,
-              distance: 100,
-              color: "#00ffff",
-              opacity: 0.1,
-              width: 1.0,
-            },
-            move: {
-              enable: true,
-              speed: 1,
-              direction: "none",
-              random: true,
-              outModes: "out",
-            },
-          },
-        }}
+        options={options}
       />
     );
   }

@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <NavigationMenu className="fixed top-[10px] right-[10px] z-50">
+    <NavigationMenu className="fixed top-[10px] right-[10px] z-50 mix-blend-exclusion">
       <NavigationMenuList>
         {links.map((link) => (
           <NavigationMenuItem key={link.href} className="relative mr-2 md:mr-3">

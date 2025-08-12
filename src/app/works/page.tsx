@@ -23,7 +23,7 @@ const WorksPage = () => {
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.5 }}
       >
-        <main className="min-h-dvh z-10">
+        <main className="min-h-dvh">
           <WorksList list={list} />
         </main>
       </motion.div>

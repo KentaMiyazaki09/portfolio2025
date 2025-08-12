@@ -26,7 +26,7 @@ const WorksList: React.FC<Props> = ({ list }) => {
   const { setSelectedId } = useSharedState();
 
   return (
-    <div className="fixed top-[80px] right-[18px] z-10">
+    <div className="fixed top-[80px] right-[18px] z-30">
       <Popover>
         <PopoverTrigger className="inline-flex items-center justify-center rounded-full border border-white p-2 data-[state=open]:bg-white/10 data-[state=open]:shadow-inner transition">
           <List className="w-5 h-5 text-white" />
@@ -36,7 +36,7 @@ const WorksList: React.FC<Props> = ({ list }) => {
           sideOffset={30}
           side="bottom"
           align="end"
-          className="p-[0]"
+          className="p-[0] z-30"
         >
           <ScrollArea className="h-72 text-neutral-200 rounded-md border">
             <Table className="bg-black/20 backdrop-blur-sm">
