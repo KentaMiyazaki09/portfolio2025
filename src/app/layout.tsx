@@ -5,11 +5,13 @@ import "./globals.css";
 import Navigation from "@/components/layouts/Navigation";
 import CanvasWrapper from "@/components/organisms/CanvasWrapper";
 import ClickParticles from "@/components/atoms/canvas/ClickParticles";
-import BgParticles from "@/components/atoms/canvas/BgParticles";
 
 import { AnimatePresence } from "motion/react";
 
 import { SharedStateProvider } from "@/context/SharedStateProvider";
+
+import ParticlesBoot from "@/components/atoms/canvas/ParticlesBoot";
+import ClickParticlesBoot from "@/components/atoms/canvas/ClickParticlesBoot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,15 +37,13 @@ export default function RootLayout({
       <body
         className={`${inter.className} text-[clamp(1.0rem,1.9vw,1.5rem)] text-neutral-50 leading-[1.7] tracking-widest`}
       >
-        <>
-          <BgParticles />
-          <SharedStateProvider>
-            <Navigation />
-            <CanvasWrapper />
-            <AnimatePresence mode="wait">{children}</AnimatePresence>
-          </SharedStateProvider>
-          <ClickParticles />
-        </>
+        <ParticlesBoot />
+        <SharedStateProvider>
+          <Navigation />
+          <CanvasWrapper />
+          <AnimatePresence mode="wait">{children}</AnimatePresence>
+        </SharedStateProvider>
+        <ClickParticlesBoot />
       </body>
     </html>
   );
