@@ -17,10 +17,14 @@ const CanvasWrapper: React.FC = () => {
 
   return (
     <div className={`${styles.wrapper} z-10`}>
-      <Canvas shadows camera={{ position: [2.5, 2, 20], fov: 60 }}>
+      <Canvas
+        shadows
+        camera={{ position: [2.5, 2, 20], fov: 60 }}
+        className="touch-none z-[100]"
+      >
         <directionalLight
-          position={[0, 15, 20]}
-          intensity={6}
+          position={[0, 12, 18]}
+          intensity={4}
           // castShadow
           // // shadow-mapSize-width={2048}
           // // shadow-mapSize-height={2048}
@@ -33,7 +37,7 @@ const CanvasWrapper: React.FC = () => {
         />
         <Suspense fallback={null}>
           <Model key={selectedId} url={`/glb/${selectedId}.glb`} />
-          <Floor />
+          {/* <Floor /> */}
         </Suspense>
 
         <OrbitControls

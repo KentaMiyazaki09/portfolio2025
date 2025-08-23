@@ -4,8 +4,6 @@ import "./globals.css";
 
 import Navigation from "@/components/layouts/Navigation";
 import CanvasWrapper from "@/components/organisms/CanvasWrapper";
-import ClickParticles from "@/components/atoms/canvas/ClickParticles";
-
 import { AnimatePresence } from "motion/react";
 
 import { SharedStateProvider } from "@/context/SharedStateProvider";
