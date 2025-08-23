@@ -7,7 +7,7 @@ import Styles from "@/styles/page.module.css";
 
 const TopPage = () => {
   return (
-    <div className="fixed top-[50%] translate-y-[-50%] left-[16px] md:left-[32px] z-30 mix-blend-exclusion">
+    <div className="fixed top-[25%] left-[16px] md:left-[32px] z-30">
       <motion.div
         key="home"
         initial={{ opacity: 0, y: 10 }}

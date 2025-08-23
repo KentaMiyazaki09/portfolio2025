@@ -34,7 +34,7 @@ const Model: React.FC<ModalProps> = ({ url }) => {
   if (!model) return null;
 
   return (
-    <group position={[-1, 0.7, 0]} rotation={[Math.PI / 5.0, -0.8, 0]}>
+    <group position={[0, -2, 0]} rotation={[Math.PI / 180.0, -0.5, 0]}>
       <primitive object={model} />
     </group>
   );

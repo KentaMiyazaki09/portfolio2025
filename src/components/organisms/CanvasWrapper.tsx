@@ -17,19 +17,19 @@ const CanvasWrapper: React.FC = () => {
 
   return (
     <div className={`${styles.wrapper} z-10`}>
-      <Canvas shadows camera={{ position: [2.5, 2, 20], fov: 45 }}>
+      <Canvas shadows camera={{ position: [2.5, 2, 20], fov: 60 }}>
         <directionalLight
-          position={[0, 10, 2]}
-          intensity={1.5}
-          castShadow
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-          shadow-camera-near={0.1}
-          shadow-camera-far={50}
-          shadow-camera-left={-30}
-          shadow-camera-right={30}
-          shadow-camera-top={30}
-          shadow-camera-bottom={-30}
+          position={[0, 15, 20]}
+          intensity={6}
+          // castShadow
+          // // shadow-mapSize-width={2048}
+          // // shadow-mapSize-height={2048}
+          // // shadow-camera-near={0.1}
+          // // shadow-camera-far={50}
+          // // shadow-camera-left={-30}
+          // // shadow-camera-right={30}
+          // // shadow-camera-top={30}
+          // // shadow-camera-bottom={-30}
         />
         <Suspense fallback={null}>
           <Model key={selectedId} url={`/glb/${selectedId}.glb`} />
@@ -37,8 +37,8 @@ const CanvasWrapper: React.FC = () => {
         </Suspense>
 
         <OrbitControls
-          enablePan={false}
-          enableZoom={false}
+          enablePan={true}
+          enableZoom={true}
           enableDamping={true}
           dampingFactor={0.05}
           rotateSpeed={0.5}
