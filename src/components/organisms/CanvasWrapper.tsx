@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
 import Model from "../atoms/canvas/GLTFModel";
-import Floor from "../atoms/canvas/Floor";
+// import Floor from "../atoms/canvas/Floor";
 
 import styles from "@/styles/organisms/canvasWrapper.module.css";
 
@@ -41,8 +41,9 @@ const CanvasWrapper: React.FC = () => {
         </Suspense>
 
         <OrbitControls
-          enablePan={true}
-          enableZoom={true}
+          makeDefault
+          enablePan={false}
+          enableZoom={false}
           enableDamping={true}
           dampingFactor={0.05}
           rotateSpeed={0.5}
@@ -50,6 +51,7 @@ const CanvasWrapper: React.FC = () => {
           maxPolarAngle={(Math.PI / 180) * 100} // 上方向の制限
           minAzimuthAngle={-Math.PI / 3} // 左への回転制限
           maxAzimuthAngle={Math.PI / 3} // 右への回転制限
+          onStart={() => window.dispatchEvent(new Event("rotate-hint-dismiss"))}
         />
       </Canvas>
     </div>

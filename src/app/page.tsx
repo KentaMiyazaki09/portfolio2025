@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "motion/react";
 
 import Styles from "@/styles/page.module.css";
 
 const TopPage = () => {
   return (
-    <div className="fixed top-[25%] left-[16px] md:left-[32px] z-30">
+    <div className="fixed top-[25%] left-[16px] md:left-[32px] z-30 pointer-events-none">
       <motion.div
         key="home"
         initial={{ opacity: 0, y: 10 }}
