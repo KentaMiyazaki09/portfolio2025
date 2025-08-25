@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navigation from "@/components/layouts/Navigation";
 import CanvasWrapper from "@/components/organisms/CanvasWrapper";
+import SwiperToRotateHint from "@/components/atoms/SwiperToRotateHint";
 import { AnimatePresence } from "motion/react";
 
 import { SharedStateProvider } from "@/context/SharedStateProvider";
@@ -39,6 +40,7 @@ export default function RootLayout({
         <SharedStateProvider>
           <Navigation />
           <CanvasWrapper />
+          <SwiperToRotateHint />
           <AnimatePresence mode="wait">{children}</AnimatePresence>
         </SharedStateProvider>
         <ClickParticlesBoot />
