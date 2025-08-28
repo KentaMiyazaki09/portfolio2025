@@ -36,7 +36,12 @@ const CanvasWrapper: React.FC = () => {
           // // shadow-camera-bottom={-30}
         />
         <Suspense fallback={null}>
-          <Model key={selectedId} url={`/glb/${selectedId}.glb`} />
+          <Model
+            key={selectedId}
+            url={`/glb/${selectedId}.glb`}
+            timeScale={1}
+            autoplay={true}
+          />
           {/* <Floor /> */}
         </Suspense>
 

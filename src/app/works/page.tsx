@@ -7,8 +7,8 @@ import PageTtl from "@/components/atoms/PageTtl";
 import WorksList from "@/components/organisms/WorksList";
 
 const list = [
+  { id: "art_eggs", ttl: "たくさんの目玉焼き", img: "01_egg.jpg" },
   { id: "10_room", ttl: "10日でBlender4入門", img: "room.png" },
-  { id: "egg", ttl: "目玉焼き", img: "01_egg.jpg" },
   { id: "ice", ttl: "アイス", img: "02_ice.png" },
 ];
 

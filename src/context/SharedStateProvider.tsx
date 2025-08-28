@@ -19,7 +19,7 @@ export const SharedStateProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [selectedId, setSelectedId] = useState<string | null>("10_room");
+  const [selectedId, setSelectedId] = useState<string | null>("art_eggs");
 
   return (
     <SharedStateContext.Provider value={{ selectedId, setSelectedId }}>
