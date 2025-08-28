@@ -60,11 +60,8 @@ export async function startParticlesOnce(id = "tsparticles") {
     if (tsParticles.dom().some((c) => String(c.id) === id)) return;
 
     // body直下にキャンバスを作成
-    const container = await tsParticles.load({ id, options });
-    const canvasEl = container?.canvas.element?.parentElement;
-    if (canvasEl) {
-      canvasEl.style.pointerEvents = "none";
-    }
+    await tsParticles.load({ id, options });
+
     started = true;
   })();
 
