@@ -3,10 +3,9 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 import Model from "../atoms/canvas/GLTFModel";
-// import Floor from "../atoms/canvas/Floor";
 
 import styles from "@/styles/organisms/canvasWrapper.module.css";
 
@@ -17,24 +16,45 @@ const CanvasWrapper: React.FC = () => {
 
   return (
     <div className={`${styles.wrapper} z-10`}>
-      <Canvas
-        shadows
-        camera={{ position: [2.5, 2, 20], fov: 60 }}
-        className="touch-none z-[100]"
-      >
-        <directionalLight
-          position={[0, 12, 18]}
-          intensity={4}
-          // castShadow
-          // // shadow-mapSize-width={2048}
-          // // shadow-mapSize-height={2048}
-          // // shadow-camera-near={0.1}
-          // // shadow-camera-far={50}
-          // // shadow-camera-left={-30}
-          // // shadow-camera-right={30}
-          // // shadow-camera-top={30}
-          // // shadow-camera-bottom={-30}
+      <Canvas shadows className="touch-none z-[100]">
+        <PerspectiveCamera
+          makeDefault
+          position={[-5, 10, 30]}
+          fov={60}
+          near={0.1}
+          far={50}
         />
+        <fog attach="fog" args={["#0b0f14", 18, 65]} />
+        {/* ふわっと全体を持ち上げる環境光 */}
+        <ambientLight intensity={0.35} color={"#f1f5ff"} />
+
+        {/* 柔らかいキーライト（影を落とす） */}
+        <directionalLight
+          position={[8, 15, 15]}
+          intensity={1.0}
+          color={"#fff6f0"}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+          shadow-camera-near={1}
+          shadow-camera-far={60}
+          shadow-normalBias={0.02}
+        />
+
+        {/* フィルライト（下寄り・弱く・少し青）→ 下半分が真っ黒になるのを防ぐ */}
+        <directionalLight
+          position={[-6, -4, 6]}
+          intensity={0.35}
+          color={"#a7c8ff"}
+        />
+
+        {/* ほんのりリムライト（輪郭にハイライト） */}
+        <directionalLight
+          position={[-10, 6, -6]}
+          intensity={0.6}
+          color={"#cfe8ff"}
+        />
+
         <Suspense fallback={null}>
           <Model
             key={selectedId}
@@ -42,10 +62,10 @@ const CanvasWrapper: React.FC = () => {
             timeScale={1}
             autoplay={true}
           />
-          {/* <Floor /> */}
         </Suspense>
 
         <OrbitControls
+          target={[2, 0, 0]}
           makeDefault
           enablePan={false}
           enableZoom={false}

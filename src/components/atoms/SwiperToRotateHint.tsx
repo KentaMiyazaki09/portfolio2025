@@ -20,6 +20,7 @@ const SwiperToRotateHint = () => {
   return (
     <div className="fixed bottom-[60px] left-[50%] translate-x-[-28px] z-50 pointer-events-none">
       <svg
+        className="md:w-[100px]"
         xmlns="http://www.w3.org/2000/svg"
         width="56"
         height="40"
