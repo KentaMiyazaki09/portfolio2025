@@ -19,7 +19,7 @@ const CanvasWrapper: React.FC = () => {
       <Canvas shadows className="touch-none z-[100]">
         <PerspectiveCamera
           makeDefault
-          position={[-5, 10, 30]}
+          position={[0, 8, 20]}
           fov={60}
           near={0.1}
           far={50}
@@ -65,10 +65,10 @@ const CanvasWrapper: React.FC = () => {
         </Suspense>
 
         <OrbitControls
-          target={[2, 0, 0]}
+          target={[0, 1, 0]}
           makeDefault
           enablePan={false}
-          enableZoom={false}
+          enableZoom={true}
           enableDamping={true}
           dampingFactor={0.05}
           rotateSpeed={0.5}

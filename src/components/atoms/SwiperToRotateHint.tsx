@@ -18,9 +18,9 @@ const SwiperToRotateHint = () => {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-[60px] left-[50%] translate-x-[-28px] z-50 pointer-events-none">
+    <div className="fixed bottom-[60px] left-[50%] translate-x-[-28px] z-50 pointer-events-none center leading-none">
       <svg
-        className="md:w-[100px]"
+        className="md:w-[100px] h-auto"
         xmlns="http://www.w3.org/2000/svg"
         width="56"
         height="40"
@@ -52,18 +52,10 @@ const SwiperToRotateHint = () => {
           </g>
           <line x1="28" y1="9" x2="28" y2="13" />
         </g>
-
-        <text
-          x="28"
-          y="36"
-          textAnchor="middle"
-          fontSize="8"
-          fill="currentColor"
-          stroke="none"
-        >
-          swipe
-        </text>
       </svg>
+      <p className="text-[11px] md:text-[14px] ml-[-19px] md:ml-[-8px]">
+        Swipe & Zoom
+      </p>
       <style jsx>{`
         .mouse {
           transform-box: fill-box; /* SVGの境界基準で */
