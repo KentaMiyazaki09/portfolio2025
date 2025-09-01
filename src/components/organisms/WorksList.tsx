@@ -38,7 +38,7 @@ const WorksList: React.FC<Props> = ({ list }) => {
           align="end"
           className="p-[0] z-30"
         >
-          <ScrollArea className="h-72 text-neutral-200 rounded-md border">
+          <ScrollArea className="h-60 text-neutral-200 rounded-md border">
             <Table className="bg-black/20 backdrop-blur-sm">
               <TableBody>
                 {list.map(({ id, ttl, img }) => (
