@@ -36,7 +36,7 @@ const CanvasWrapper: React.FC = () => {
           castShadow
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
-          shadow-camera-near={1}
+          shadow-camera-5near={1}
           shadow-camera-far={60}
           shadow-normalBias={0.02}
         />
@@ -69,6 +69,8 @@ const CanvasWrapper: React.FC = () => {
           makeDefault
           enablePan={false}
           enableZoom={true}
+          minDistance={10}
+          maxDistance={30}
           enableDamping={true}
           dampingFactor={0.05}
           rotateSpeed={0.5}
