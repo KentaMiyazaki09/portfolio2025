@@ -10,10 +10,10 @@ const TopPage = () => {
     <div className="fixed top-[25%] left-[16px] md:left-[32px] z-30 pointer-events-none">
       <motion.div
         key="home"
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 15 }}
+        transition={{ duration: 0.9 }}
       >
         <h1 className="text-[clamp(1.5rem,1.875vw,2.0rem)] font-semibold tracking-widest [text-shadow:2px_2px_0_black] mb-3">
           KENTA MIYAZAKI

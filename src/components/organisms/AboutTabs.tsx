@@ -54,11 +54,11 @@ const AboutTabs = () => (
                     KENTA MIYAZAKI
                   </p>
                 </div>
-                <Avatar className="w-16 h-16">
+                <Avatar className="w-20 h-20 aspect-square">
                   <Image
-                    src="/avatar.jpg"
-                    width={64}
-                    height={64}
+                    src="/avatar.png"
+                    width={100}
+                    height={100}
                     alt="Avatar"
                     className="rounded-full object-cover"
                     priority
@@ -97,7 +97,7 @@ const AboutTabs = () => (
               <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-300">
                 1995年生まれ。フロントエンジニア。
                 <br />
-                現在はBlenderやWebGLを学び、表現の幅を広げています。アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。
+                アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。WebGL・Blenderを勉強中。
               </CardDescription>
             </div>
           </CardContent>

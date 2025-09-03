@@ -18,10 +18,10 @@ const WorksPage = () => {
       <PageTtl text="WROKS" />
       <motion.div
         key="works"
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 15 }}
+        transition={{ duration: 0.9 }}
       >
         <main className="min-h-dvh">
           <WorksList list={list} />
