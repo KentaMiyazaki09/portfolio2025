@@ -74,7 +74,7 @@ const AboutTabs = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaGithub size={25} color="#3654ce" />
+                  <FaGithub size={25} color="#101010" />
                 </a>
                 <a
                   className="mr-3"

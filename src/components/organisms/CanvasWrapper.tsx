@@ -19,7 +19,7 @@ const CanvasWrapper: React.FC = () => {
       <Canvas shadows className="touch-none z-[100]">
         <PerspectiveCamera
           makeDefault
-          position={[0, 8, 20]}
+          position={[0, 30, 30]}
           fov={60}
           near={0.1}
           far={50}

@@ -14,8 +14,8 @@ const list = [
 
 const WorksPage = () => {
   return (
-    <>
-      <PageTtl text="WROKS" />
+    <main>
+      <PageTtl text="WORKS" />
       <motion.div
         key="works"
         initial={{ opacity: 0, y: 15 }}
@@ -27,7 +27,7 @@ const WorksPage = () => {
           <WorksList list={list} />
         </main>
       </motion.div>
-    </>
+    </main>
   );
 };
 

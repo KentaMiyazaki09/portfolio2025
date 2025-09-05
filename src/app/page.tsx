@@ -7,7 +7,10 @@ import Styles from "@/styles/page.module.css";
 
 const TopPage = () => {
   return (
-    <div className="fixed top-[25%] left-[16px] md:left-[32px] z-30 pointer-events-none">
+    <main
+      data-page-title="3D & Web"
+      className="fixed top-[25%] left-[16px] md:left-[32px] z-30 pointer-events-none"
+    >
       <motion.div
         key="home"
         initial={{ opacity: 0, y: 15 }}
@@ -24,7 +27,7 @@ const TopPage = () => {
           3D <span>&</span> Web
         </p>
       </motion.div>
-    </div>
+    </main>
   );
 };
 

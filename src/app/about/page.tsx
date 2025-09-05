@@ -8,7 +8,7 @@ import AboutTabs from "@/components/organisms/AboutTabs";
 
 const AboutPage: React.FC = () => {
   return (
-    <>
+    <main>
       <PageTtl text="ABOUT" />
       <motion.div
         key="works"
@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
       >
         <AboutTabs />
       </motion.div>
-    </>
+    </main>
   );
 };
 

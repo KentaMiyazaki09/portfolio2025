@@ -11,6 +11,7 @@ import { SharedStateProvider } from "@/context/SharedStateProvider";
 
 import ParticlesBoot from "@/components/atoms/canvas/ParticlesBoot";
 import ClickParticlesBoot from "@/components/atoms/canvas/ClickParticlesBoot";
+import BgWiper from "@/components/atoms/BgWiper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} text-[clamp(1.0rem,1.9vw,1.5rem)] text-neutral-50 leading-[1.7] tracking-widest`}
       >
+        <BgWiper />
         <ParticlesBoot />
         <SharedStateProvider>
           <Navigation />
