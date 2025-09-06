@@ -39,7 +39,7 @@ const AboutTabs = () => (
         </TabsTrigger>
       </TabsList>
       <TabsContent value="AboutMe">
-        <Card className="will-change-[backdrop-filter] bg-black/20 backdrop-blur-sm text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
+        <Card className="will-change-[backdrop-filter] bg-black/20 backdrop-blur-sm text-neutral-50 overflow-y-auto h-auto scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">About Me</CardTitle>
           </CardHeader>

@@ -26,14 +26,14 @@ const WorksList: React.FC<Props> = ({ list }) => {
   const { setSelectedId } = useSharedState();
 
   return (
-    <div className="fixed top-[80px] right-[18px] z-30">
+    <div className="fixed bottom-[30px] left-[18px] z-30">
       <Popover>
         <PopoverTrigger className="inline-flex items-center justify-center rounded-full border border-white p-2 data-[state=open]:bg-white/10 data-[state=open]:shadow-inner transition">
           <List className="w-5 h-5 text-white" />
         </PopoverTrigger>
 
         <PopoverContent
-          sideOffset={30}
+          sideOffset={20}
           side="bottom"
           align="end"
           className="p-[0] z-30"
