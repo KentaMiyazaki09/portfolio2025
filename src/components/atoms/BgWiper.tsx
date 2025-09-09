@@ -1,5 +1,7 @@
 "use client";
 
+import { Target, useArchWipe } from "@/hooks/useArchWipe";
+import { usePreviousPathname } from "@/hooks/usePreviousPathname";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -13,149 +15,47 @@ const archPath = (h: number) => {
 };
 
 const TextParticles = () => {
-  const pathname = usePathname();
+  // 初回マウントの処理
   const [mount, setMount] = useState(false);
-
-  const [show, setShow] = useState(false);
-  const [showWorks, setShowWorks] = useState(false);
-
-  // const ref = useRef<SVGRectElement | null>(null);
-  const pathRef = useRef<SVGPathElement | null>(null);
-
-  // const refWorks = useRef<SVGRectElement | null>(null);
-  const pathRefWorks = useRef<SVGRectElement | null>(null);
-
   useEffect(() => setMount(true), []);
 
   // ページ遷移時に表示ON
+  const pathname = usePathname();
+  const [show, setShow] = useState<Target>(null);
   useEffect(() => {
     if (pathname === "/about") {
-      setShow(true);
-      setShowWorks(false);
+      setShow("/about");
     } else if (pathname === "/works") {
-      setShowWorks(true);
-      setShow(false);
+      setShow("/works");
     } else {
-      setShowWorks(false);
-      setShow(false);
+      setShow(null);
     }
   }, [pathname]);
 
-  /* aboutの背景 */
-  useEffect(() => {
-    const el = pathRef.current;
-    let raf = 0;
-    const start = performance.now();
-    const from = 360;
-    const to = 0;
-    const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+  /* SVG背景のアニメーションを実行 */
+  const pathRefAbout = useRef<SVGPathElement | null>(null);
+  const pathRefWorks = useRef<SVGRectElement | null>(null);
 
-    const tick = () => {
-      const t = Math.min(1, (performance.now() - start) / 1600);
-      const h = from + (to - from) * ease(t);
-      if (pathRef.current) pathRef.current.setAttribute("d", archPath(h));
-      if (t < 1) raf = requestAnimationFrame(tick);
-    };
+  const prevPage = usePreviousPathname();
 
-    if (!el) return;
-
-    if (show) {
-      if (el) {
-        el.setAttribute("d", archPath(from));
-        el.animate(
-          [
-            { transform: "translateY(120%)", opacity: 1 },
-            { transform: "translateY(0%)", opacity: 1 },
-          ],
-          {
-            duration: 1200,
-            easing: "linear",
-            fill: "forwards",
-          }
-        );
-        raf = requestAnimationFrame(tick);
-      }
-    } else {
-      if (el) {
-        // el.setAttribute("d", archPath(from));
-        el.animate(
-          [
-            { transform: "translateY(0%)", opacity: 1 },
-            { transform: "translateY(-120%)", opacity: 1 },
-          ],
-          {
-            duration: 600,
-            easing: "linear",
-            fill: "forwards",
-          }
-        );
-        // raf = requestAnimationFrame(tick);
-      }
-    }
-
-    return () => cancelAnimationFrame(raf);
-  }, [show]);
-
-  /* worksの背景 */
-  useEffect(() => {
-    const el = pathRefWorks.current;
-    let raf = 0;
-    const start = performance.now();
-    const from = 360;
-    const to = 0;
-    const ease = (t: number) => 1 - Math.pow(1 - t, 3);
-
-    const tick = () => {
-      const t = Math.min(1, (performance.now() - start) / 1600);
-      const h = from + (to - from) * ease(t);
-      if (pathRefWorks.current)
-        pathRefWorks.current.setAttribute("d", archPath(h));
-      if (t < 1) raf = requestAnimationFrame(tick);
-    };
-
-    if (!el) return;
-
-    if (showWorks) {
-      if (el) {
-        el.setAttribute("d", archPath(from));
-        el.animate(
-          [
-            { transform: "translateY(120%)", opacity: 1 },
-            { transform: "translateY(0%)", opacity: 1 },
-          ],
-          {
-            duration: 1200,
-            easing: "linear",
-            fill: "forwards",
-          }
-        );
-        raf = requestAnimationFrame(tick);
-      }
-    } else {
-      if (el) {
-        // el.setAttribute("d", archPath(from));
-        el.animate(
-          [
-            { transform: "translateY(0%)", opacity: 1 },
-            { transform: "translateY(-120%)", opacity: 1 },
-          ],
-          {
-            duration: 600,
-            easing: "linear",
-            fill: "forwards",
-          }
-        );
-        // raf = requestAnimationFrame(tick);
-      }
-    }
-
-    return () => cancelAnimationFrame(raf);
-  }, [showWorks]);
+  useArchWipe(pathRefAbout, show, "/about", {
+    from: 30,
+    to: 0,
+    makePath: archPath,
+    prevPage,
+  });
+  useArchWipe(pathRefWorks, show, "/works", {
+    from: 30,
+    to: 0,
+    makePath: archPath,
+    prevPage,
+  });
 
   if (!mount) return;
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
+      {/* about背景 */}
       <svg
         width="100%"
         height="100%"
@@ -166,7 +66,11 @@ const TextParticles = () => {
         <defs>
           <mask id="wipe-mask">
             <rect width="100%" height="100%" fill="black" />
-            <path ref={pathRef} fill="white" transform="translate(0, 120)" />
+            <path
+              ref={pathRefAbout}
+              fill="white"
+              transform="translate(0, 120)"
+            />
           </mask>
         </defs>
 
@@ -178,6 +82,7 @@ const TextParticles = () => {
         />
       </svg>
 
+      {/* works背景 */}
       <svg
         width="100%"
         height="100%"
@@ -188,7 +93,11 @@ const TextParticles = () => {
         <defs>
           <mask id="wipe-mask-works">
             <rect width="100%" height="100%" fill="black" />
-            <path ref={pathRefWorks} fill="white" />
+            <path
+              ref={pathRefWorks}
+              fill="white"
+              transform="translate(0, 120)"
+            />
           </mask>
         </defs>
 
