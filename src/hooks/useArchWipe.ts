@@ -22,7 +22,7 @@ export function useArchWipe(
     to,
     shapeMs = 1600,
     inMs = 1200,
-    outMs = 1200,
+    outMs = 800,
     easing = (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
     makePath,
     prevPage,

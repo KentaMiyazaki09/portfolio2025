@@ -39,13 +39,13 @@ const TextParticles = () => {
   const prevPage = usePreviousPathname();
 
   useArchWipe(pathRefAbout, show, "/about", {
-    from: 30,
+    from: 300,
     to: 0,
     makePath: archPath,
     prevPage,
   });
   useArchWipe(pathRefWorks, show, "/works", {
-    from: 30,
+    from: 300,
     to: 0,
     makePath: archPath,
     prevPage,
