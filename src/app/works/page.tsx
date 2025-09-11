@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "motion/react";
 
 import PageTtl from "@/components/atoms/PageTtl";
-import WorksList from "@/components/organisms/WorksList";
 
 const list = [
   { id: "art_eggs", ttl: "目玉焼き", img: "egg.png" },
@@ -23,9 +22,7 @@ const WorksPage = () => {
         exit={{ opacity: 0, y: 15 }}
         transition={{ duration: 0.9 }}
       >
-        <main className="min-h-dvh">
-          <WorksList list={list} />
-        </main>
+        <main className="min-h-dvh"></main>
       </motion.div>
     </main>
   );
