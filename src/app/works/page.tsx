@@ -4,11 +4,51 @@ import React from "react";
 import { motion } from "motion/react";
 
 import PageTtl from "@/components/atoms/PageTtl";
+import Works from "@/components/molecules/Works";
 
 const list = [
-  { id: "art_eggs", ttl: "目玉焼き", img: "egg.png" },
-  { id: "10_room", ttl: "10日でBlender4入門", img: "room.png" },
-  { id: "ice", ttl: "アイス", img: "02_ice.png" },
+  {
+    thumb: "/works/nowledge.png",
+    url: "https://nowledge.rhino-inc.jp/",
+    ttl: "Portfolio",
+    tags: ["Next.js", "typescript", "Blender"],
+  },
+  {
+    thumb: "/works/Portfolio.png",
+    url: "https://portfolio2025-delta-seven.vercel.app/",
+    ttl: "Nowledge",
+    tags: ["Next.js", "jamstack", "microCMS", "Netlify"],
+  },
+  {
+    thumb: "/works/Beams.png",
+    url: "https://www.beams.co.jp/special/beams_cultuart/",
+    ttl: "Beams Cultuart",
+    tags: ["Wordpress"],
+  },
+  {
+    thumb: "/works/nikoand.png",
+    url: "https://www.dot-st.com/nikoand/cp/202408product_zakka",
+    ttl: "nikoand... キン肉マンコラボ",
+    tags: ["LP", "Canvas2D"],
+  },
+  {
+    thumb: "/works/THREE.png",
+    url: "https://www.threecosmetics.com/brand/news/fragrance-finder",
+    ttl: "THREE FRAGRANCE FINDER",
+    tags: ["LP", "Canvas"],
+  },
+  {
+    thumb: "/works/tku.png",
+    url: "https://www.tku.ac.jp/",
+    ttl: "東京経済大学",
+    tags: ["Movabletype7"],
+  },
+  {
+    thumb: "/works/kidsattic.png",
+    url: "https://www.kids-attic.org/",
+    ttl: "キッズアティック",
+    tags: ["LP"],
+  },
 ];
 
 const WorksPage = () => {
@@ -22,7 +62,9 @@ const WorksPage = () => {
         exit={{ opacity: 0, y: 15 }}
         transition={{ duration: 0.9 }}
       >
-        <main className="min-h-dvh"></main>
+        <main className="min-h-dvh">
+          <Works list={list} />
+        </main>
       </motion.div>
     </main>
   );
