@@ -17,7 +17,7 @@ const list = [
     thumb: "/works/Portfolio.png",
     url: "https://portfolio2025-delta-seven.vercel.app/",
     ttl: "Nowledge",
-    tags: ["Next.js", "jamstack", "microCMS", "Netlify"],
+    tags: ["Next.js", "jamstack"],
   },
   {
     thumb: "/works/Beams.png",
@@ -53,7 +53,7 @@ const list = [
 
 const WorksPage = () => {
   return (
-    <main>
+    <main className="z-30 relative">
       <PageTtl text="WORKS" />
       <motion.div
         key="works"
@@ -62,9 +62,9 @@ const WorksPage = () => {
         exit={{ opacity: 0, y: 15 }}
         transition={{ duration: 0.9 }}
       >
-        <main className="min-h-dvh">
+        <div className="min-h-dvh md:max-w-[800px] pt-[100px] md:pt-[140px] pr-[20px] pb-[50px] pl-[20px] fixed md:left-[50%] md:translate-x-[-50%] w-full h-full overflow-auto scrollbar-hide">
           <Works list={list} />
-        </main>
+        </div>
       </motion.div>
     </main>
   );

@@ -22,19 +22,21 @@ type ListProps = {
 
 const Works = ({ list }: ListProps) => {
   return (
-    <div className="flex flex-wrap fixed z-30">
+    <div className="md:flex md:flex-wrap md:justify-between">
       {list.map(({ ttl, url, thumb, tags }) => (
-        <Card className="bg-black/20 backdrop-blur-sm ">
+        <Card className="bg-black/20 w-fill md:w-[49%] mb-3">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <CardHeader>
-              <Image
-                src={thumb}
-                width={100}
-                height={150}
-                alt="Picture of the author"
-                loading="eager"
-              />
-              <CardTitle className="text-neutral-100">{ttl}</CardTitle>
+            <CardHeader className="pb-4">
+              <div className="relative w-full h-[100px] md:h-[150px] mb-3">
+                <Image
+                  src={thumb}
+                  alt="Picture of the author"
+                  fill
+                  loading="eager"
+                  className="object-cover"
+                />
+              </div>
+              <CardTitle className="text-neutral-100 text-xl">{ttl}</CardTitle>
             </CardHeader>
             <CardFooter>
               {tags.map((tag) => (

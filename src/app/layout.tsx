@@ -39,6 +39,7 @@ export default function RootLayout({
       >
         <BgWiper />
         <ParticlesBoot />
+        <div className="fixed z-10 backdrop-blur-sm w-full h-full"></div>
         <SharedStateProvider>
           <Navigation />
           <CanvasWrapper />

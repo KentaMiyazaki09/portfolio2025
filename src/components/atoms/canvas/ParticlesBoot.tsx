@@ -7,5 +7,5 @@ export default function ParticlesBoot() {
     import("@/lib/particlesClient").then((m) => m.startParticlesOnce());
   }, []);
 
-  return null; // DOMに何も描画しない
+  return null;
 }
