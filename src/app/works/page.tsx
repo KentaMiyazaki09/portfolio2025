@@ -20,6 +20,12 @@ const list = [
     tags: ["Next.js", "jamstack"],
   },
   {
+    thumb: "/works/neutrial.png",
+    url: "https://neutrial.com/",
+    ttl: "neutrial",
+    tags: ["Shopify"],
+  },
+  {
     thumb: "/works/Beams.png",
     url: "https://www.beams.co.jp/special/beams_cultuart/",
     ttl: "Beams Cultuart",
