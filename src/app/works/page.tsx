@@ -8,13 +8,13 @@ import Works from "@/components/molecules/Works";
 
 const list = [
   {
-    thumb: "/works/nowledge.png",
+    thumb: "/works/Portfolio.png",
     url: "https://nowledge.rhino-inc.jp/",
     ttl: "Portfolio",
-    tags: ["Next.js", "typescript", "Blender"],
+    tags: ["Next.js", "Blender"],
   },
   {
-    thumb: "/works/Portfolio.png",
+    thumb: "/works/nowledge.png",
     url: "https://portfolio2025-delta-seven.vercel.app/",
     ttl: "Nowledge",
     tags: ["Next.js", "jamstack"],
@@ -29,7 +29,7 @@ const list = [
     thumb: "/works/nikoand.png",
     url: "https://www.dot-st.com/nikoand/cp/202408product_zakka",
     ttl: "nikoand... キン肉マンコラボ",
-    tags: ["LP", "Canvas2D"],
+    tags: ["LP", "Canvas"],
   },
   {
     thumb: "/works/THREE.png",

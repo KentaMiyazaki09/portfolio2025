@@ -24,7 +24,7 @@ const Works = ({ list }: ListProps) => {
   return (
     <div className="md:flex md:flex-wrap md:justify-between">
       {list.map(({ ttl, url, thumb, tags }) => (
-        <Card className="bg-black/20 w-fill md:w-[49%] mb-3">
+        <Card key={ttl} className="bg-black/20 w-fill md:w-[49%] mb-3">
           <a href={url} target="_blank" rel="noopener noreferrer">
             <CardHeader className="pb-4">
               <div className="relative w-full h-[100px] md:h-[150px] mb-3">
@@ -40,7 +40,9 @@ const Works = ({ list }: ListProps) => {
             </CardHeader>
             <CardFooter>
               {tags.map((tag) => (
-                <span className="text-neutral-300 text-sm mr-2">{tag}</span>
+                <span key={tag} className="text-neutral-300 text-sm mr-2">
+                  {tag}
+                </span>
               ))}
             </CardFooter>
           </a>
