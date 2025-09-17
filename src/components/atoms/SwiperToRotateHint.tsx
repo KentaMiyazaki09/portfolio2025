@@ -1,15 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
+let dismissedOnce = false;
 
 const SwiperToRotateHint = () => {
   const [show, setShow] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    setShow(true);
+    if (dismissedOnce) {
+      setShow(false);
+      return;
+    }
 
-    const dismiss = () => setShow(false);
+    if (pathname === "/") {
+      setShow(true);
+    } else {
+      dismissedOnce = true;
+      setShow(false);
+    }
+  }, [pathname]);
 
+  useEffect(() => {
+    const dismiss = () => {
+      dismissedOnce = true;
+      setShow(false);
+    };
+
+    // CanvasWrapperで定義済みのrotate-hint-dismissを呼び出し
     window.addEventListener("rotate-hint-dismiss", dismiss);
 
     return () => window.removeEventListener("rotate-hint-dismiss", dismiss);

@@ -1,4 +1,3 @@
-// "use client";
 import { tsParticles, type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 

@@ -62,8 +62,10 @@ const WorksPage = () => {
         exit={{ opacity: 0, y: 15 }}
         transition={{ duration: 0.9 }}
       >
-        <div className="min-h-dvh md:max-w-[800px] pt-[100px] md:pt-[140px] pr-[20px] pb-[50px] pl-[20px] fixed md:left-[50%] md:translate-x-[-50%] w-full h-full overflow-auto scrollbar-hide">
-          <Works list={list} />
+        <div className="min-h-dvh w-full pt-[100px] md:pt-[140px] pr-[20px] pb-[50px] pl-[20px] fixed md:left-[50%] md:translate-x-[-50%] h-full overflow-auto scrollbar-hide">
+          <div className="w-full md:max-w-[800px] md:m-auto">
+            <Works list={list} />
+          </div>
         </div>
       </motion.div>
     </main>
