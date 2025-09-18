@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import Image from "next/image";
@@ -39,8 +39,20 @@ const list = [
   { id: "ice", ttl: "アイス", img: "02_ice.png" },
 ];
 
+const tick = (time: number) =>
+  new Promise<void>((resolve) => setTimeout(() => resolve(), time));
+
 const Navigation: React.FC = () => {
   const pathname = usePathname();
+
+  const [clickable, setClickable] = useState(true);
+
+  const toggleLockMenu = async () => {
+    if (!clickable) return;
+    setClickable(false);
+    await tick(1700);
+    setClickable(true);
+  };
 
   const { setSelectedId } = useSharedState();
 
@@ -48,11 +60,19 @@ const Navigation: React.FC = () => {
     <NavigationMenu className="fixed top-[10px] right-[10px] z-50">
       <NavigationMenuList>
         {links.map((link) => (
-          <NavigationMenuItem key={link.href} className="relative mr-2 md:mr-3">
+          <NavigationMenuItem
+            key={link.href}
+            className="relative mr-2 md:mr-3"
+            style={{
+              opacity: clickable ? 1 : 0.5,
+              pointerEvents: clickable ? "auto" : "none",
+            }}
+          >
             <NavigationMenuLink asChild>
               <Link
                 href={link.href}
                 className="text-[clamp(0.75rem,2.5vw,1.2rem)]"
+                onClick={toggleLockMenu}
               >
                 {link.label}
                 {pathname === link.href ? (
