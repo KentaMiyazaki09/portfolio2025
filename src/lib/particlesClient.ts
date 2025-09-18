@@ -15,18 +15,11 @@ export async function startParticlesOnce(id = "tsparticles_bg") {
       fullScreen: { enable: true, zIndex: 0 },
       background: { color: "transparent" },
       particles: {
-        number: { value: 50 },
+        number: { value: 20 },
         color: { value: "#00ffff" },
         shape: { type: "edge" },
-        opacity: { value: 0.3, animation: { enable: true, speed: 1 } },
-        size: { value: 2 },
-        links: {
-          enable: true,
-          distance: 100,
-          color: "#00ffff",
-          opacity: 0.1,
-          width: 1,
-        },
+        opacity: { value: 0.4, animation: { enable: true, speed: 1 } },
+        size: { value: 15 },
         move: {
           enable: true,
           speed: 1,
