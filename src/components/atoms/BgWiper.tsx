@@ -2,15 +2,7 @@
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 
-const ArchMaskBg = ({
-  color,
-  maskId,
-}: {
-  color: string;
-  maskId: string;
-  fromY?: number;
-  toY?: number;
-}) => {
+const ArchMaskBg = ({ color, maskId }: { color: string; maskId: string }) => {
   return (
     <motion.svg
       width="100%"
@@ -18,26 +10,24 @@ const ArchMaskBg = ({
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
       className="absolute"
-      initial={{ y: "100%" }}
+      initial={{ y: "120%" }}
       animate={{
         y: "0%",
-        transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.9, ease: "linear" },
       }}
       exit={{
-        y: "-100%",
-        transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
+        y: "-120%",
+        transition: { duration: 0.6, ease: "linear" },
       }}
     >
-      {/* <defs>
-        <mask id={maskId}>
-          <rect width="100%" height="100%" fill="white" />
-          <motion.path
-            fill="black"
-            d="M0,300 Q50,270 100,300 L100,100 L0,100 Z"
-            // d="M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z"
-          />
-        </mask>
-      </defs> */}
+      <mask id={maskId}>
+        <rect width="100%" height="100%" fill="white" />
+        <motion.g>
+          <rect x="0" y="90" width="100" height="300" fill="black" />
+          <motion.circle cx="50" cy="0" r="20" fill="black" />
+        </motion.g>
+      </mask>
+
       <rect width="100%" height="100%" fill={color} mask={`url(#${maskId})`} />
     </motion.svg>
   );
