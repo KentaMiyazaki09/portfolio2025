@@ -11,6 +11,7 @@ type Options = {
   easing?: (t: number) => number;
   makePath: (h: number) => string;
   prevPage: string | null;
+  // onCloseEnd: () => void;
 };
 
 export function useArchWipe(
@@ -26,7 +27,8 @@ export function useArchWipe(
     easing = (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
     makePath,
     prevPage,
-  }: Options
+  }: // onCloseEnd,
+  Options
 ) {
   const rafRef = useRef<number | null>(null);
 
@@ -66,6 +68,8 @@ export function useArchWipe(
           ],
           { duration: outMs, easing: "linear", fill: "forwards" }
         );
+
+        // onCloseEnd();
       }
     }
 
@@ -73,5 +77,18 @@ export function useArchWipe(
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
     };
-  }, [show, ref, from, to, shapeMs, inMs, outMs, easing, makePath]);
+  }, [
+    show,
+    ref,
+    from,
+    to,
+    shapeMs,
+    inMs,
+    outMs,
+    easing,
+    makePath,
+    mine,
+    prevPage,
+    // onCloseEnd,
+  ]);
 }
