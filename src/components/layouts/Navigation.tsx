@@ -64,6 +64,7 @@ const Navigation: React.FC = () => {
             key={link.href}
             className="relative mr-2 md:mr-3"
             style={{
+              transition: "opacity 0.6s ease",
               opacity: clickable ? 1 : 0.5,
               pointerEvents: clickable ? "auto" : "none",
             }}

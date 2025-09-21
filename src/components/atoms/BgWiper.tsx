@@ -22,10 +22,15 @@ const ArchMaskBg = ({ color, maskId }: { color: string; maskId: string }) => {
     >
       <mask id={maskId}>
         <rect width="100%" height="100%" fill="white" />
-        <motion.g>
-          <rect x="0" y="90" width="100" height="300" fill="black" />
-          <motion.circle cx="50" cy="0" r="20" fill="black" />
-        </motion.g>
+        <motion.ellipse
+          cx="50"
+          cy="0"
+          rx="50"
+          fill="black"
+          initial={{ ry: 80 }}
+          animate={{ ry: 0, transition: { duration: 0.9, ease: "linear" } }}
+          exit={{ ry: 80, transition: { duration: 0.9, ease: "linear" } }}
+        />
       </mask>
 
       <rect width="100%" height="100%" fill={color} mask={`url(#${maskId})`} />
