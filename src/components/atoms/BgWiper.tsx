@@ -1,115 +1,58 @@
 "use client";
-
-import { Target, useArchWipe } from "@/hooks/useArchWipe";
-import { usePreviousPathname } from "@/hooks/usePreviousPathname";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
-/**
- * @param h 波の高さ（大きいほど山が高い）
- */
-const archPath = (h: number) => {
-  const y = Math.max(0, h);
-  const cy = Math.max(0, h - 30);
-  return `M0,${y} Q50,${cy} 100,${y} L100,100 L0,100 Z`;
-};
-
-const TextParticles = () => {
-  // 初回マウントの処理
-  const [mount, setMount] = useState(false);
-  useEffect(() => setMount(true), []);
-
-  // ページ遷移時に表示ON
-  const pathname = usePathname();
-  const [show, setShow] = useState<Target>(null);
-  useEffect(() => {
-    if (pathname === "/about") {
-      setShow("/about");
-    } else if (pathname === "/works") {
-      setShow("/works");
-    } else {
-      setShow(null);
-    }
-  }, [pathname]);
-
-  /* SVG背景のアニメーションを実行 */
-  const pathRefAbout = useRef<SVGPathElement | null>(null);
-  const pathRefWorks = useRef<SVGRectElement | null>(null);
-
-  const prevPage = usePreviousPathname();
-
-  useArchWipe(pathRefAbout, show, "/about", {
-    from: 300,
-    to: 0,
-    makePath: archPath,
-    prevPage,
-  });
-  useArchWipe(pathRefWorks, show, "/works", {
-    from: 300,
-    to: 0,
-    makePath: archPath,
-    prevPage,
-  });
-
-  if (!mount) return;
-
+const ArchMaskBg = ({ color, maskId }: { color: string; maskId: string }) => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
-      {/* about背景 */}
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        className="absolute"
-      >
-        <defs>
-          <mask id="wipe-mask">
-            <rect width="100%" height="100%" fill="black" />
-            <path
-              ref={pathRefAbout}
-              fill="white"
-              transform="translate(0, 120)"
-            />
-          </mask>
-        </defs>
-
-        <rect
-          width="100%"
-          height="100%"
-          fill="#283655"
-          mask="url(#wipe-mask)"
+    <motion.svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      className="absolute"
+      initial={{ y: "120%" }}
+      animate={{
+        y: "0%",
+        transition: { duration: 0.9, ease: "linear" },
+      }}
+      exit={{
+        y: "-120%",
+        transition: { duration: 0.6, ease: "linear" },
+      }}
+    >
+      <mask id={maskId}>
+        <rect width="100%" height="100%" fill="white" />
+        <motion.ellipse
+          cx="50"
+          cy="0"
+          rx="50"
+          fill="black"
+          initial={{ ry: 80 }}
+          animate={{ ry: 0, transition: { duration: 0.9, ease: "linear" } }}
+          exit={{ ry: 80, transition: { duration: 0.9, ease: "linear" } }}
         />
-      </svg>
+      </mask>
 
-      {/* works背景 */}
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        className="absolute"
-      >
-        <defs>
-          <mask id="wipe-mask-works">
-            <rect width="100%" height="100%" fill="black" />
-            <path
-              ref={pathRefWorks}
-              fill="white"
-              transform="translate(0, 120)"
-            />
-          </mask>
-        </defs>
-
-        <rect
-          width="100%"
-          height="100%"
-          fill="#4d648d"
-          mask="url(#wipe-mask-works)"
-        />
-      </svg>
-    </div>
+      <rect width="100%" height="100%" fill={color} mask={`url(#${maskId})`} />
+    </motion.svg>
   );
 };
 
-export default TextParticles;
+export default function BgWipes() {
+  const pathname = usePathname();
+  const isAbout = pathname === "/about";
+  const isWorks = pathname === "/works";
+
+  return (
+    <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
+      <AnimatePresence mode="wait">
+        {isAbout && (
+          <ArchMaskBg color="#283655" key="mask-about" maskId="mask-about" />
+        )}
+        {isWorks && (
+          <ArchMaskBg color="#4d648d" key="mask-works" maskId="mask-works" />
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

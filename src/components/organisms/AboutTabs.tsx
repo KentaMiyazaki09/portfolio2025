@@ -24,16 +24,16 @@ import Image from "next/image";
 const AboutTabs = () => (
   <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
     <Tabs defaultValue="AboutMe">
-      <TabsList className="bg-black/20 text-neutral-400">
+      <TabsList className="bg-black/0 text-neutral-400">
         <TabsTrigger
           value="AboutMe"
-          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/20 mr-2"
         >
           About Me
         </TabsTrigger>
         <TabsTrigger
           value="Skills"
-          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/20"
         >
           Skills
         </TabsTrigger>
