@@ -54,7 +54,14 @@ const Navigation: React.FC = () => {
     setClickable(true);
   };
 
-  const { setSelectedId } = useSharedState();
+  const { setSelectedId, setLeavingTo } = useSharedState();
+
+  const goTo = (target: string) => {
+    const isCurrent = pathname !== target;
+    if (!isCurrent) return;
+    setLeavingTo(target);
+    toggleLockMenu();
+  };
 
   return (
     <NavigationMenu className="fixed top-[10px] right-[10px] z-50">
@@ -70,10 +77,9 @@ const Navigation: React.FC = () => {
             }}
           >
             <NavigationMenuLink asChild>
-              <Link
-                href={link.href}
+              <button
                 className="text-[clamp(0.75rem,2.5vw,1.2rem)]"
-                onClick={toggleLockMenu}
+                onClick={() => goTo(link.href)}
               >
                 {link.label}
                 {pathname === link.href ? (
@@ -83,7 +89,7 @@ const Navigation: React.FC = () => {
                     id="underline"
                   />
                 ) : null}
-              </Link>
+              </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
         ))}

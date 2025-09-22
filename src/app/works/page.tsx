@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
 
 import PageTtl from "@/components/atoms/PageTtl";
 import Works from "@/components/molecules/Works";
@@ -59,22 +58,12 @@ const list = [
 
 const WorksPage = () => {
   return (
-    <main className="z-30 relative">
+    <div className="min-h-dvh w-full pt-[100px] md:pt-[140px] pr-[20px] pb-[50px] pl-[20px] fixed md:left-[50%] md:translate-x-[-50%] h-full overflow-auto scrollbar-hide">
       <PageTtl text="WORKS" />
-      <motion.div
-        key="works"
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 15 }}
-        transition={{ duration: 0.9 }}
-      >
-        <div className="min-h-dvh w-full pt-[100px] md:pt-[140px] pr-[20px] pb-[50px] pl-[20px] fixed md:left-[50%] md:translate-x-[-50%] h-full overflow-auto scrollbar-hide">
-          <div className="w-full md:max-w-[800px] md:m-auto">
-            <Works list={list} />
-          </div>
-        </div>
-      </motion.div>
-    </main>
+      <div className="w-full md:max-w-[800px] md:m-auto">
+        <Works list={list} />
+      </div>
+    </div>
   );
 };
 

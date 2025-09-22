@@ -5,11 +5,15 @@ import React, { createContext, useContext, useState } from "react";
 type SharedStateContextType = {
   selectedId: string | null;
   setSelectedId: (id: string | null) => void;
+  leavingTo: string | null;
+  setLeavingTo: (id: string | null) => void;
 };
 
 const defaultValue: SharedStateContextType = {
   selectedId: null,
   setSelectedId: () => {},
+  leavingTo: null,
+  setLeavingTo: () => {},
 };
 
 const SharedStateContext = createContext<SharedStateContextType>(defaultValue);
@@ -20,9 +24,12 @@ export const SharedStateProvider = ({
   children: React.ReactNode;
 }) => {
   const [selectedId, setSelectedId] = useState<string | null>("art_eggs");
+  const [leavingTo, setLeavingTo] = useState<string | null>(null);
 
   return (
-    <SharedStateContext.Provider value={{ selectedId, setSelectedId }}>
+    <SharedStateContext.Provider
+      value={{ selectedId, setSelectedId, leavingTo, setLeavingTo }}
+    >
       {children}
     </SharedStateContext.Provider>
   );

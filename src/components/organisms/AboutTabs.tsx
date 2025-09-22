@@ -22,7 +22,7 @@ import { Avatar } from "@/components/ui/avatar";
 import Image from "next/image";
 
 const AboutTabs = () => (
-  <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
+  <div className="max-w-lg mt-auto ml-auto mr-auto">
     <Tabs defaultValue="AboutMe">
       <TabsList className="bg-black/0 text-neutral-400">
         <TabsTrigger

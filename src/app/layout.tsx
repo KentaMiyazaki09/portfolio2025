@@ -3,9 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Navigation from "@/components/layouts/Navigation";
+import PageTransition from "@/components/layouts/PageTransition";
+
 import CanvasWrapper from "@/components/organisms/CanvasWrapper";
 import SwiperToRotateHint from "@/components/atoms/SwiperToRotateHint";
-import { AnimatePresence } from "motion/react";
 
 import { SharedStateProvider } from "@/context/SharedStateProvider";
 
@@ -44,7 +45,7 @@ export default function RootLayout({
           <Navigation />
           <CanvasWrapper />
           <SwiperToRotateHint />
-          <AnimatePresence mode="wait">{children}</AnimatePresence>
+          <PageTransition>{children}</PageTransition>
         </SharedStateProvider>
         <ClickParticlesBoot />
       </body>
