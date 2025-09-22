@@ -1,7 +1,7 @@
 "use client";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import { useSharedState } from "@/context/SharedStateProvider";
 
@@ -20,7 +20,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
           opacity: 0,
           y: -50,
           duration: 0.9,
-          ease: "power1.in",
+          ease: "power3.in",
           onComplete: () => {
             const to = leavingTo;
             setLeavingTo(null);
@@ -31,7 +31,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         gsap.fromTo(
           el.current,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 1.2, ease: "power1.out" }
+          { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
         );
       }
     },
