@@ -18,7 +18,8 @@ const list = [
     url: "https://nowledge.rhino-inc.jp/",
     ttl: "Nowledge",
     tags: ["Next.js", "jamstack"],
-    comment: "社内で週1開催される情報共有をスプシからWEBサイトへ。",
+    comment:
+      "社内で週1開催される情報共有をスプシからWEBサイトへ。Next.js、microCMS、Netlifyで構成。",
   },
   {
     thumb: "/works/neutrial.png",
