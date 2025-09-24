@@ -152,7 +152,7 @@ const AboutTabs = () => (
               </Label>
               <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
                 MovableType7 / WordPress / PHP / Shopify（Liquid）/ microCMS /
-                Netlify
+                Netlify / webpack /gulp
               </CardDescription>
             </div>
             <div className="grid gap-2">
