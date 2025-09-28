@@ -1,7 +1,7 @@
 "use client";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useRef } from "react";
 import { useSharedState } from "@/context/SharedStateProvider";
 
@@ -10,6 +10,7 @@ gsap.registerPlugin(useGSAP);
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const el = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   const { leavingTo, setLeavingTo } = useSharedState();
 
@@ -39,7 +40,12 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
   );
 
   return (
-    <div ref={el} className="relative z-30">
+    <div
+      ref={el}
+      className={`relative z-30 ${
+        pathname === "/" ? "pointer-events-none" : ""
+      }`}
+    >
       {children}
     </div>
   );
