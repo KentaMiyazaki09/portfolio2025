@@ -9,7 +9,6 @@ const ArchMaskBg = ({ color, maskId }: { color: string; maskId: string }) => {
       height="100%"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
-      className="absolute"
       initial={{ y: "120%" }}
       animate={{
         y: "0%",

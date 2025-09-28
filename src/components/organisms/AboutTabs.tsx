@@ -22,24 +22,24 @@ import { Avatar } from "@/components/ui/avatar";
 import Image from "next/image";
 
 const AboutTabs = () => (
-  <div className="flex w-full flex-col gap-4 max-w-lg m-auto">
+  <div className="max-w-lg mt-auto ml-auto mr-auto">
     <Tabs defaultValue="AboutMe">
       <TabsList className="bg-black/0 text-neutral-400">
         <TabsTrigger
           value="AboutMe"
-          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/20 mr-2"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/60 mr-2"
         >
           About Me
         </TabsTrigger>
         <TabsTrigger
           value="Skills"
-          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/20"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/60"
         >
           Skills
         </TabsTrigger>
       </TabsList>
       <TabsContent value="AboutMe">
-        <Card className="will-change-[backdrop-filter] bg-black/20 text-neutral-50 overflow-y-auto h-auto scrollbar-hide">
+        <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-auto scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">About Me</CardTitle>
           </CardHeader>
@@ -74,7 +74,7 @@ const AboutTabs = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaGithub size={25} color="#101010" />
+                  <FaGithub size={25} color="#fefefe" />
                 </a>
                 <a
                   className="mr-3"
@@ -94,17 +94,17 @@ const AboutTabs = () => (
               </div>
             </div>
             <div className="grid gap-3">
-              <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-300">
+              <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-200">
                 1995年生まれ。フロントエンジニア。
                 <br />
-                アイデアを視覚や感覚で伝える表現に落とし込むのが好きです。WebGL・Blenderを勉強中。
+                エンジニアのくせに視覚や感覚的な表現に落とし込むのが好きです。WebGL・Blenderを勉強中。
               </CardDescription>
             </div>
           </CardContent>
         </Card>
       </TabsContent>
       <TabsContent value="Skills">
-        <Card className="will-change-[backdrop-filter] bg-black/20 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
+        <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">Skills</CardTitle>
           </CardHeader>
@@ -120,7 +120,7 @@ const AboutTabs = () => (
                 />
                 <span>Languages</span>
               </Label>
-              <CardDescription className="text-xs text-neutral-300">
+              <CardDescription className="text-xs text-neutral-200">
                 HTML / CSS / JavaScript / TypeScript
               </CardDescription>
             </div>
@@ -135,7 +135,7 @@ const AboutTabs = () => (
                 />
                 Frameworks
               </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
                 React / Next.js / Tailwind CSS
               </CardDescription>
             </div>
@@ -150,8 +150,9 @@ const AboutTabs = () => (
                 />
                 Other Skills
               </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                MovableType7 / WordPress / PHP / Shopify
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
+                MovableType7 / WordPress / PHP / Shopify（Liquid）/ microCMS /
+                Netlify / webpack /gulp
               </CardDescription>
             </div>
             <div className="grid gap-2">
@@ -165,7 +166,7 @@ const AboutTabs = () => (
                 />
                 3D
               </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
                 Three.js / WebGL / Blender
               </CardDescription>
             </div>
@@ -180,8 +181,8 @@ const AboutTabs = () => (
                 />
                 Tools
               </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
-                WindowsPC / MacBook / GitHub / VSCode / Figma / Photoshop /
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
+                Windows / MacBook / GitHub / VSCode / Figma / Photoshop /
                 Illustrator / ChatGPT
               </CardDescription>
             </div>
@@ -196,7 +197,7 @@ const AboutTabs = () => (
                 />
                 Currently Learning...
               </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-300">
+              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
                 Advanced Blender / Three.js / React
               </CardDescription>
             </div>
