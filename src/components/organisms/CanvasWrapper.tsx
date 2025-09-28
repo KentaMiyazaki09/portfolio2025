@@ -25,7 +25,7 @@ const CanvasWrapper: React.FC = () => {
 
         <PerspectiveCamera
           makeDefault
-          position={[0, 30, 30]}
+          position={[0, 5, 15]}
           fov={60}
           near={0.1}
           far={50}
