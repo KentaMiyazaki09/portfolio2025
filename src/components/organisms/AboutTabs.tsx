@@ -97,7 +97,7 @@ const AboutTabs = () => (
               <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-200">
                 1995年生まれ。フロントエンジニア。
                 <br />
-                エンジニアのくせに視覚や感覚的な表現に落とし込むのが好きです。WebGL・Blenderを勉強中。
+                視覚や感覚的な表現に落とし込むのが好きです。WebGL・Blenderを勉強中。
               </CardDescription>
             </div>
           </CardContent>

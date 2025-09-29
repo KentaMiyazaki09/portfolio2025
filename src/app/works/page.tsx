@@ -11,7 +11,7 @@ const list = [
     url: "https://portfolio2025-delta-seven.vercel.app/",
     ttl: "Portfolio",
     tags: ["Next.js", "Blender"],
-    comment: "BlenderやWEBサイトの作品ギャラリー、または新しい技術の実験場。",
+    comment: "Blenderはじめました。",
   },
   {
     thumb: "/works/nowledge.png",
@@ -19,14 +19,14 @@ const list = [
     ttl: "Nowledge",
     tags: ["Next.js", "jamstack"],
     comment:
-      "社内で週1開催される情報共有をスプシからWEBサイトへ。Next.js、microCMS、Netlifyで構成。",
+      "チーム内の情報共有をスプシからWEBサイトへ。Next.js、microCMS、Netlifyで構成。",
   },
   {
     thumb: "/works/neutrial.png",
     url: "https://neutrial.com/",
     ttl: "neutrial",
     tags: ["Shopify", "liquid"],
-    comment: "liquidを用いて部分的に更新を担当。ともさかりえさんのサプリ。",
+    comment: "liquidを用いて部分的に更新を担当。",
   },
   {
     thumb: "/works/Beams.png",
