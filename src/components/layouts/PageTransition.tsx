@@ -7,6 +7,8 @@ import { useSharedState } from "@/context/SharedStateProvider";
 
 gsap.registerPlugin(useGSAP);
 
+gsap.defaults({ overwrite: "auto" });
+
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const el = useRef<HTMLDivElement>(null);
   const router = useRouter();
