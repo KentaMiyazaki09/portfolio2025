@@ -25,6 +25,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import styles from "@/styles/layouts/Navigation.module.css";
 
 import { useSharedState } from "@/context/SharedStateProvider";
+import Link from "next/link";
 
 const links = [
   { href: "/", label: "HOME" },
@@ -77,9 +78,13 @@ const Navigation: React.FC = () => {
             }}
           >
             <NavigationMenuLink asChild>
-              <button
+              <Link
+                href={link.href}
                 className="text-[clamp(0.75rem,2.5vw,1.2rem)]"
-                onClick={() => goTo(link.href)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goTo(link.href);
+                }}
               >
                 {link.label}
                 {pathname === link.href ? (
@@ -89,7 +94,7 @@ const Navigation: React.FC = () => {
                     id="underline"
                   />
                 ) : null}
-              </button>
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         ))}
