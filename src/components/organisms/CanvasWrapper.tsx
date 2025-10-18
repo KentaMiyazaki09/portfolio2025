@@ -15,12 +15,23 @@ import styles from "@/styles/organisms/canvasWrapper.module.css";
 
 import { useSharedState } from "@/context/SharedStateProvider";
 
+import * as THREE from "three";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+
 const CanvasWrapper: React.FC = () => {
   const { selectedId } = useSharedState();
 
   return (
     <div className={`${styles.wrapper} z-10`}>
-      <Canvas shadows className="touch-none z-[100]">
+      <Canvas
+        shadows
+        className="touch-none z-[100]"
+        onCreated={({ gl }) => {
+          gl.toneMapping = THREE.ACESFilmicToneMapping;
+          gl.toneMappingExposure = 1.0;
+          gl.outputColorSpace = THREE.SRGBColorSpace; // r152+
+        }}
+      >
         <Environment files="/hdri/night_puresky.hdr" background={false} />
 
         <PerspectiveCamera
@@ -39,6 +50,15 @@ const CanvasWrapper: React.FC = () => {
             autoplay={true}
           />
         </Suspense>
+
+        <EffectComposer>
+          <Bloom
+            intensity={0.1} // strength
+            luminanceThreshold={0.4} // threshold
+            luminanceSmoothing={0.2} // ソフトしきい値
+            radius={0.2} // 広がり
+          />
+        </EffectComposer>
 
         <OrbitControls
           target={[0, 1, 0]}
