@@ -39,12 +39,11 @@ const Model: React.FC<ModelProps> = ({
     scene.traverse((obj) => {
       if ((obj as THREE.Mesh).isMesh) {
         obj.castShadow = true;
-        // (必要なら) obj.receiveShadow = true;
       }
     });
   }, [scene]);
 
-  // アニメ制御
+  // アニメーション制御
   const { actions, mixer } = useAnimations(animations, group);
 
   useEffect(() => {

@@ -19,10 +19,11 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
   useGSAP(
     () => {
       if (leavingTo) {
+        gsap.killTweensOf(el.current);
         gsap.to(el.current, {
           opacity: 0,
           y: -50,
-          duration: 2,
+          duration: 1.6,
           ease: "power3.in",
           onComplete: () => {
             const to = leavingTo;
@@ -34,7 +35,13 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         gsap.fromTo(
           el.current,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 2, ease: "power3.out", delay: 0.2 }
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.6,
+            ease: "power3.out",
+            delay: 0.2,
+          }
         );
       }
     },
