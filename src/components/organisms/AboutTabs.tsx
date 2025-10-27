@@ -7,38 +7,55 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Globe,
-  SquareDashedBottomCode,
-  Box,
-  ToolCase,
-  GraduationCap,
-  Columns3Cog,
-} from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiZenn } from "react-icons/si";
 import { Avatar } from "@/components/ui/avatar";
 import Image from "next/image";
 
-const AboutTabs = () => (
+type Item = {
+  icon: React.ElementType;
+  color: string;
+  name: string;
+  desc: string | React.ReactNode;
+};
+
+type AboutTabsProps = {
+  skillList: Item[];
+  QandA: Item[];
+  favo: Item[];
+};
+
+const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
   <div className="max-w-lg mt-auto ml-auto mr-auto">
-    <Tabs defaultValue="AboutMe">
+    <Tabs defaultValue="About">
       <TabsList className="bg-black/0 text-neutral-400">
         <TabsTrigger
-          value="AboutMe"
+          value="About"
           className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/60 mr-2"
         >
-          About Me
+          About
         </TabsTrigger>
         <TabsTrigger
-          value="Skills"
+          value="Skill"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/60 mr-2"
+        >
+          Skill
+        </TabsTrigger>
+        <TabsTrigger
+          value="QandA"
+          className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/60 mr-2"
+        >
+          Q&A
+        </TabsTrigger>
+        <TabsTrigger
+          value="Favo"
           className="text-[clamp(0.75rem,2.5vw,1.2rem)] font-bold tracking-normal bg-black/60"
         >
-          Skills
+          Favorite
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="AboutMe">
+      <TabsContent value="About">
         <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-auto scrollbar-hide">
           <CardHeader>
             <CardTitle className="text-xl">About Me</CardTitle>
@@ -103,104 +120,90 @@ const AboutTabs = () => (
           </CardContent>
         </Card>
       </TabsContent>
-      <TabsContent value="Skills">
+      <TabsContent value="Skill">
         <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
-            <CardTitle className="text-xl">Skills</CardTitle>
+            <CardTitle className="text-xl">Skill</CardTitle>
           </CardHeader>
           <CardContent className="grid gap-6">
-            <div className="grid gap-2">
-              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
-                <Globe
-                  className="mr-1"
-                  size={20}
-                  strokeWidth={1.5}
-                  absoluteStrokeWidth
-                  color="#3654ce"
-                />
-                <span>Languages</span>
-              </Label>
-              <CardDescription className="text-xs text-neutral-200">
-                HTML / CSS / JavaScript / TypeScript
-              </CardDescription>
-            </div>
-            <div className="grid gap-2">
-              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
-                <SquareDashedBottomCode
-                  className="mr-1"
-                  size={20}
-                  strokeWidth={1.5}
-                  absoluteStrokeWidth
-                  color="#e2747a"
-                />
-                Frameworks
-              </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
-                React / Next.js / Tailwind CSS
-              </CardDescription>
-            </div>
-            <div className="grid gap-2">
-              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
-                <Columns3Cog
-                  className="mr-1"
-                  size={20}
-                  strokeWidth={1.5}
-                  absoluteStrokeWidth
-                  color="#bbbf82"
-                />
-                Other Skills
-              </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
-                MovableType7 / WordPress / PHP / Shopify（Liquid）/ microCMS /
-                Netlify / webpack /gulp
-              </CardDescription>
-            </div>
-            <div className="grid gap-2">
-              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
-                <Box
-                  className="mr-1"
-                  size={20}
-                  strokeWidth={1.5}
-                  absoluteStrokeWidth
-                  color="#74e295"
-                />
-                3D
-              </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
-                Three.js / WebGL / Blender
-              </CardDescription>
-            </div>
-            <div className="grid gap-2">
-              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
-                <ToolCase
-                  className="mr-1"
-                  size={20}
-                  strokeWidth={1.5}
-                  absoluteStrokeWidth
-                  color="#b074e2"
-                />
-                Tools
-              </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
-                Windows / MacBook / GitHub / VSCode / Figma / Photoshop /
-                Illustrator / ChatGPT
-              </CardDescription>
-            </div>
-            <div className="grid gap-2">
-              <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
-                <GraduationCap
-                  className="mr-1"
-                  size={20}
-                  strokeWidth={1.5}
-                  absoluteStrokeWidth
-                  color="#bababa"
-                />
-                Currently Learning...
-              </Label>
-              <CardDescription className="text-[clamp(0.8rem,1.26vw,1.0rem)] text-neutral-200">
-                Advanced Blender / Three.js / React
-              </CardDescription>
-            </div>
+            {skillList.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.name} className="grid gap-2">
+                  <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
+                    <Icon
+                      className="mr-1"
+                      size={20}
+                      strokeWidth={1.5}
+                      absoluteStrokeWidth
+                      color={item.color}
+                    />
+                    <span>{item.name}</span>
+                  </Label>
+                  <CardDescription className="text-xs text-neutral-200">
+                    {item.desc}
+                  </CardDescription>
+                </div>
+              );
+            })}
+          </CardContent>
+        </Card>
+      </TabsContent>
+      <TabsContent value="QandA">
+        <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
+          <CardHeader>
+            <CardTitle className="text-xl">Q&A</CardTitle>
+          </CardHeader>
+          <CardContent className="grid gap-6">
+            {QandA.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.name} className="grid gap-2">
+                  <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
+                    <Icon
+                      className="mr-1"
+                      size={20}
+                      strokeWidth={1.5}
+                      absoluteStrokeWidth
+                      color={item.color}
+                    />
+                    <span>{item.name}</span>
+                  </Label>
+                  <CardDescription className="text-xs text-neutral-200">
+                    {item.desc}
+                  </CardDescription>
+                </div>
+              );
+            })}
+          </CardContent>
+        </Card>
+      </TabsContent>
+      <TabsContent value="Favo">
+        <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
+          <CardHeader>
+            <CardTitle className="text-xl">Favorite</CardTitle>
+          </CardHeader>
+          <CardContent className="grid gap-6">
+            {favo.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.name} className="grid gap-2">
+                  <Label className="text-[clamp(0.9rem,1.39vw,1.1rem)] flex items-center">
+                    <Icon
+                      className="mr-1"
+                      size={20}
+                      strokeWidth={1.5}
+                      absoluteStrokeWidth
+                      color={item.color}
+                    />
+                    <span>{item.name}</span>
+                  </Label>
+                  <CardDescription className="text-xs text-neutral-200">
+                    {item.desc}
+                  </CardDescription>
+                </div>
+              );
+            })}
           </CardContent>
         </Card>
       </TabsContent>

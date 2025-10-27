@@ -55,8 +55,7 @@ const list = [
     url: "https://www.tku.ac.jp/",
     ttl: "東京経済大学",
     tags: ["Movabletype7"],
-    comment:
-      "Movabletype7を勉強しながら実装したサイト。ちゃんと更新されてて満足🍔",
+    comment: "Movabletype7を勉強しながら実装したサイト。",
   },
   {
     thumb: "/works/kidsattic.png",
