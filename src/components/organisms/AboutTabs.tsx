@@ -27,7 +27,7 @@ type AboutTabsProps = {
 };
 
 const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
-  <div className="max-w-lg mt-auto ml-auto mr-auto">
+  <div className="max-w-[600px] mt-auto ml-auto mr-auto">
     <Tabs defaultValue="About">
       <TabsList className="bg-black/0 text-neutral-400">
         <TabsTrigger
@@ -140,7 +140,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
                     />
                     <span>{item.name}</span>
                   </Label>
-                  <CardDescription className="text-xs text-neutral-200">
+                  <CardDescription className="text-xd text-neutral-200">
                     {item.desc}
                   </CardDescription>
                 </div>
@@ -169,7 +169,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
                     />
                     <span>{item.name}</span>
                   </Label>
-                  <CardDescription className="text-xs text-neutral-200">
+                  <CardDescription className="text-xd text-neutral-200">
                     {item.desc}
                   </CardDescription>
                 </div>
@@ -198,7 +198,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
                     />
                     <span>{item.name}</span>
                   </Label>
-                  <CardDescription className="text-xs text-neutral-200">
+                  <CardDescription className="text-xd text-neutral-200">
                     {item.desc}
                   </CardDescription>
                 </div>
