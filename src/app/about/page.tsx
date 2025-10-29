@@ -38,7 +38,7 @@ const SkillList = [
     icon: Columns3Cog,
     color: "#bbbf82",
     name: "その他スキル",
-    desc: "EJS / Sass / MovableType7 / WordPress / PHP / Shopify（Liquid）/ microCMS / Netlify",
+    desc: "EJS / Sass / MovableType7 / WordPress / Shopify（Liquid）/ microCMS / Netlify",
   },
   {
     icon: Wrench,
@@ -62,7 +62,7 @@ const SkillList = [
     icon: GraduationCap,
     color: "#bababa",
     name: "学習中...",
-    desc: "Advanced Blender / Three.js / React / Turbopack",
+    desc: "Advanced Blender / Three.js / React",
   },
 ];
 
@@ -71,19 +71,37 @@ const QandA = [
     icon: History,
     color: "#3654ce",
     name: "フロントエンジニアを志した理由",
-    desc: "Amaz◯nで買い物している時に「そもそもどうやって動いてるのだろう。みんなスマホ持っているし、Webやアプリ開発は需要が高そうだな〜」と感じた。10年前...？もう歳はとりたくない。",
+    desc: "Amaz◯nで買い物している時に「そもそもどうやって動いてるのだろう。みんなスマホ持っているし、Webやアプリ開発は需要が高そうだな〜」と感じた。",
   },
   {
     icon: SquareArrowRight,
     color: "#e2699a",
     name: "次の目標",
-    desc: "基本的にフロントエンジニア、サブで3D。映像や3D関係の知り合いと仕事ができたら嬉しい。画面に向かうだけでなく、新しい刺激を受けて表現の幅・人脈を広げていきたい。",
+    desc: "基本的にフロントエンジニア、サブで3D。技術面にこだわるだけでなく、新しい刺激を受けて表現の幅・人脈を広げていきたい。社内だけでなく映像や3D関係の知り合いと仕事ができたら嬉しい。React19へのアップデート...やらねば。",
   },
   {
     icon: MonitorPlay,
     color: "#7d69e2",
     name: "Blenderを始めた理由",
     desc: "映像制作の知り合いが使ってたのを観て、「JavaScriptの知識あればインタラクティブな実装できるな」と考え試してるところ。",
+  },
+  {
+    icon: MonitorPlay,
+    color: "#7d69e2",
+    name: "会社・仕事に対しての姿勢",
+    desc: "界隈のコミュニティーや人脈のつながり、自身の成長を大事にしています。「会社や地域に貢献したい」とはあまり考えていない。よくありがちなのが「社内の環境改善推進のコアメンバーになってくれ」というもの。あくまでエンジニアという立場から情報提供・技術的な支援・相談をするという明確な役割分担がなされている会社が望ましい。",
+  },
+  {
+    icon: MonitorPlay,
+    color: "#7d69e2",
+    name: "AIについて",
+    desc: "OpenAIだけでなく各企業が目まぐるしい速度でアップデートを繰り返すしレイオフもするし個人開発も活発ですし...キャッチアップしきれません。エンジニア界隈ではコピペ問題が度々話題になってますが、僕のコードはAI率0%です（https://code-detector.ai/）。chatGPTはもちろん使いますが使い方はよく考えてます。",
+  },
+  {
+    icon: MonitorPlay,
+    color: "#7d69e2",
+    name: "どういう人間か",
+    desc: "「技術・コミュニケーションのバランスが良い」らしいです。他部署の人間と仲良くなることが多いです。飲み会やイベントは1/3ぐらいは顔出します〜、というスタンスです。",
   },
 ];
 
