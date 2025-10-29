@@ -1,3 +1,4 @@
 {
-  "liveServer.settings.multiRootWorkspaceName": "portfolio2025"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }

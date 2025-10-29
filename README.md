@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## ⚙️Development Setup
+
+VSCode extensions installed:
+| 拡張機能 | ID | 説明 |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------ | -------------- |
+| [**ESLint**](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) | `dbaeumer.vscode-eslint` | コードの構文・ルールチェック |
+| [**Prettier - Code formatter**](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) | `esbenp.prettier-vscode` | コード整形ツール |
+
 ## Getting Started
 
 First, run the development server:
