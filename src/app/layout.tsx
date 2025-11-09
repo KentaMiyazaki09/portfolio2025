@@ -12,7 +12,7 @@ import { SharedStateProvider } from "@/context/SharedStateProvider";
 
 import ParticlesBoot from "@/components/atoms/canvas/ParticlesBoot";
 import ClickParticlesBoot from "@/components/atoms/canvas/ClickParticlesBoot";
-import BgWiper from "@/components/atoms/BgWiper";
+import BgWiper from "@/components/organisms/BgWiper";
 
 const inter = Inter({ subsets: ["latin"] });
 

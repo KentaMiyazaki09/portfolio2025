@@ -1,4 +1,5 @@
 "use client";
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { usePathname, useRouter } from "next/navigation";
@@ -41,11 +42,11 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
             duration: 1.6,
             ease: "power3.out",
             delay: 0.2,
-          }
+          },
         );
       }
     },
-    { dependencies: [leavingTo], scope: el }
+    { dependencies: [leavingTo], scope: el },
   );
 
   return (

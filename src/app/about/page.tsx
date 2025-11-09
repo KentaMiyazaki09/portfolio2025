@@ -158,13 +158,11 @@ const Favo = [
   },
 ];
 
-const AboutPage = () => {
-  return (
-    <div className="p-4 min-h-dvh w-full flex justify-end">
-      <PageTtl text="ABOUT" />
-      <AboutTabs skillList={SkillList} QandA={QandA} favo={Favo} />
-    </div>
-  );
-};
+const AboutPage = () => (
+  <div className="p-4 min-h-dvh w-full flex justify-end">
+    <PageTtl text="ABOUT" />
+    <AboutTabs skillList={SkillList} QandA={QandA} favo={Favo} />
+  </div>
+);
 
 export default AboutPage;
