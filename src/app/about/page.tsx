@@ -1,5 +1,3 @@
-"use client";
-
 import PageTtl from "@/components/atoms/PageTtl";
 import AboutTabs from "@/components/organisms/AboutTabs";
 import {
