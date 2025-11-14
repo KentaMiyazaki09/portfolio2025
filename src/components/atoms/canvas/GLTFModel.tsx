@@ -22,9 +22,6 @@ const Model: React.FC<ModelProps> = ({
   url,
   position = [0, -2, 0],
   rotation = [Math.PI / 180, -0.5, 0],
-  timeScale = 1,
-  autoplay = true,
-  clipName,
 }) => {
   const group = useRef<Group>(null!);
 
@@ -56,7 +53,7 @@ const Model: React.FC<ModelProps> = ({
       action.enabled = true;
       action.play();
     });
-  }, [actions, animations, mixer, timeScale, autoplay, clipName]);
+  }, [actions, animations, mixer]);
 
   // 念のためmixer更新（dreiのuseAnimationsは状況により自動更新されないことがあるため）
   useFrame((_, delta) => {

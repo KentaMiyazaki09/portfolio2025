@@ -37,7 +37,6 @@ const list = [
   { id: "cafe", ttl: "カフェ", img: "cafe.png" },
   { id: "art_eggs", ttl: "目玉焼き", img: "egg.png" },
   { id: "10_room", ttl: "10日でBlender4入門", img: "room.png" },
-  { id: "ice", ttl: "アイス", img: "02_ice.png" },
 ];
 
 const tick = (time: number) =>
