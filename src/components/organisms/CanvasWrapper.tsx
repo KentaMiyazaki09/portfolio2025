@@ -22,10 +22,10 @@ const CanvasWrapper: React.FC = () => {
     <div className={`${styles.wrapper} z-10`}>
       <Canvas shadows className="touch-none z-[100]">
         {/** 前方から照らすライト */}
-        <directionalLight intensity={2} position={[0, 0, 5]} castShadow />
+        <directionalLight intensity={2} position={[0, 5, 5]} castShadow />
 
         {/** 上から照らすライト */}
-        <directionalLight intensity={0.8} position={[0, 10, 8]} />
+        <directionalLight intensity={1.2} position={[0, 10, 10]} />
 
         {/** 逆光（後ろから照らすライト） */}
         <directionalLight intensity={0.8} position={[-2, 1, -3]} />
@@ -59,8 +59,8 @@ const CanvasWrapper: React.FC = () => {
           rotateSpeed={0.5}
           minPolarAngle={Math.PI / 180} // 下方向の制限
           maxPolarAngle={(Math.PI / 180) * 100} // 上方向の制限
-          minAzimuthAngle={-Math.PI / 3} // 左への回転制限
-          maxAzimuthAngle={Math.PI / 3} // 右への回転制限
+          minAzimuthAngle={-Math.PI / 2} // 左への回転制限
+          maxAzimuthAngle={Math.PI / 2} // 右への回転制限
           onStart={() => window.dispatchEvent(new Event("rotate-hint-dismiss"))}
         />
       </Canvas>
