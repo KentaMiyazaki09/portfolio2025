@@ -31,13 +31,13 @@ const SkillList = [
     icon: SquareDashedBottomCode,
     color: "#e2747a",
     name: "フレームワーク",
-    desc: "React（v18.2.0） / Next.js（v14.1.0） / Tailwind CSS",
+    desc: "React（v16.0.10） / Next.js（v19.2.3） / Tailwind CSS",
   },
   {
     icon: Columns3Cog,
     color: "#bbbf82",
     name: "その他スキル",
-    desc: "EJS / Sass / MovableType7 / WordPress / Shopify（Liquid）",
+    desc: "EJS / Sass / MovableType7 / WordPress / Shopify（Liquid）/ Netlify / Vercel / テストツール（Vitest）",
   },
   {
     icon: Wrench,
@@ -76,7 +76,7 @@ const QandA = [
     icon: SquareArrowRight,
     color: "#e2699a",
     name: "次の目標",
-    desc: "引き続きフロントエンジニア、サブで3D。技術だけでなく、新しい刺激や人とのつながりを通して表現の幅を広げていきたいです。React19へのアップデート...やらねば。",
+    desc: "引き続きフロントエンジニア、サブで3D。技術だけでなく、新しい刺激や人とのつながりを通して表現の幅を広げていきたいです。",
   },
   {
     icon: Box,
@@ -88,7 +88,7 @@ const QandA = [
     icon: Annoyed,
     color: "#bdbdbd",
     name: "課題に感じていること",
-    desc: "本格的なアジャイル開発の経験がまだないです。Webアプリケーション構築に深く関わっていきたい一方で、経験不足も感じています。テスト実装なども意識して学んでいきたい。",
+    desc: "本格的なアジャイル開発の経験がまだないです。Webアプリケーション構築に深く関わっていきたい一方で、経験不足も感じています。バックエンド、テスト実装なども意識して学んでいきたい。",
   },
 ];
 
