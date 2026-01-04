@@ -3,42 +3,41 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-let dismissedOnce = false;
+// let dismissedOnce = false;
 
 const SwiperToRotateHint = () => {
   const [show, setShow] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    if (dismissedOnce) {
-      setShow(false);
-      return;
-    }
+    // if (dismissedOnce) {
+    //   setShow(false);
+    //   return;
+    // }
 
     if (pathname === "/") {
       setShow(true);
     } else {
-      dismissedOnce = true;
       setShow(false);
     }
   }, [pathname]);
 
-  useEffect(() => {
-    const dismiss = () => {
-      dismissedOnce = true;
-      setShow(false);
-    };
+  // useEffect(() => {
+  //   const dismiss = () => {
+  //     dismissedOnce = true;
+  //     setShow(false);
+  //   };
 
-    // CanvasWrapperで定義済みのrotate-hint-dismissを呼び出し
-    window.addEventListener("rotate-hint-dismiss", dismiss);
+  //   // CanvasWrapperで定義済みのrotate-hint-dismissを呼び出し
+  //   window.addEventListener("rotate-hint-dismiss", dismiss);
 
-    return () => window.removeEventListener("rotate-hint-dismiss", dismiss);
-  }, []);
+  //   return () => window.removeEventListener("rotate-hint-dismiss", dismiss);
+  // }, []);
 
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-[60px] left-[50%] translate-x-[-28px] z-50 pointer-events-none center leading-none">
+    <div className="fixed bottom-[30px] left-[50%] translate-x-[-28px] z-50 pointer-events-none center leading-none">
       <svg
         className="md:w-[100px] h-auto"
         xmlns="http://www.w3.org/2000/svg"

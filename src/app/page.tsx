@@ -1,5 +1,3 @@
-import React from "react";
-
 import Styles from "@/styles/page.module.css";
 
 const TopPage = () => (
