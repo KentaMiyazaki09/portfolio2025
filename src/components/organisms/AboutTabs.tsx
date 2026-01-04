@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import {
   Card,
   CardContent,
@@ -11,7 +13,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiZenn } from "react-icons/si";
 import { Avatar } from "@/components/ui/avatar";
-import Image from "next/image";
 
 import { type LucideIcon } from "lucide-react";
 
@@ -94,6 +95,14 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
                   rel="noopener noreferrer"
                 >
                   <FaGithub size={25} color="#fefefe" />
+                </a>
+                <a
+                  className="mr-3"
+                  href="https://note.com/k_miyaz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src="/icons/note.svg" width={25} height={25} alt="" />
                 </a>
                 <a
                   className="mr-3"
