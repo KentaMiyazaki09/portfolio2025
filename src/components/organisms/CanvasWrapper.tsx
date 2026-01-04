@@ -3,11 +3,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  Environment,
-} from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 import Model from "../atoms/canvas/GLTFModel";
 
@@ -61,7 +57,6 @@ const CanvasWrapper: React.FC = () => {
           maxPolarAngle={(Math.PI / 180) * 100} // 上方向の制限
           minAzimuthAngle={-Math.PI / 2} // 左への回転制限
           maxAzimuthAngle={Math.PI / 2} // 右への回転制限
-          onStart={() => window.dispatchEvent(new Event("rotate-hint-dismiss"))}
         />
       </Canvas>
     </div>

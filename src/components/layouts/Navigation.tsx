@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 
@@ -12,15 +11,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Box } from "lucide-react";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 import styles from "@/styles/layouts/Navigation.module.css";
 
@@ -33,16 +23,10 @@ const links = [
   { href: "/works", label: "WORKS" },
 ];
 
-const list = [
-  { id: "cafe", ttl: "カフェ", img: "cafe.png" },
-  { id: "art_eggs", ttl: "目玉焼き", img: "egg.png" },
-  { id: "10_room", ttl: "10日でBlender4入門", img: "room.png" },
-];
-
 const tick = (time: number) =>
   new Promise<void>((resolve) => setTimeout(() => resolve(), time));
 
-const Navigation: React.FC = () => {
+const Navigation = () => {
   const pathname = usePathname();
 
   const [clickable, setClickable] = useState(true);
@@ -54,7 +38,7 @@ const Navigation: React.FC = () => {
     setClickable(true);
   };
 
-  const { setSelectedId, setLeavingTo } = useSharedState();
+  const { setLeavingTo } = useSharedState();
 
   const goTo = (target: string) => {
     const isCurrent = pathname !== target;
@@ -98,44 +82,6 @@ const Navigation: React.FC = () => {
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
-
-      <div className="fixed top-[10px] md:top-[30px] left-[10px] md:left-[30px] z-30">
-        <Popover>
-          <PopoverTrigger className="inline-flex items-center justify-center rounded-full border border-white p-2 data-[state=open]:bg-white/10 data-[state=open]:shadow-inner transition w-14 h-14">
-            <Box className="w-6 h-6 text-white" />
-          </PopoverTrigger>
-
-          <PopoverContent
-            sideOffset={20}
-            side="bottom"
-            align="end"
-            className="p-[0] z-30"
-          >
-            <ScrollArea className="h-40 text-neutral-200 rounded-md border">
-              <Table className="bg-black/20 backdrop-blur-sm">
-                <TableBody>
-                  {list.map(({ id, ttl, img }) => (
-                    <TableRow key={id} onClick={() => setSelectedId(id)}>
-                      <TableCell>
-                        <Image
-                          src={`/list/${img}`}
-                          width={150}
-                          height={150}
-                          alt="Picture of the author"
-                          loading="eager"
-                        />
-                      </TableCell>
-                      <TableCell className="text-ls md:text-lg">
-                        {ttl}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </ScrollArea>
-          </PopoverContent>
-        </Popover>
-      </div>
     </NavigationMenu>
   );
 };
