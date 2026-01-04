@@ -6,7 +6,6 @@ import Navigation from "@/components/layouts/Navigation";
 import PageTransition from "@/components/layouts/PageTransition";
 
 import CanvasWrapper from "@/components/organisms/CanvasWrapper";
-import SwiperToRotateHint from "@/components/atoms/SwiperToRotateHint";
 
 import { SharedStateProvider } from "@/context/SharedStateProvider";
 
@@ -44,7 +43,6 @@ export default function RootLayout({
         <SharedStateProvider>
           <Navigation />
           <CanvasWrapper />
-          <SwiperToRotateHint />
           <PageTransition>{children}</PageTransition>
         </SharedStateProvider>
         <ClickParticlesBoot />
