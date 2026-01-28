@@ -9,7 +9,7 @@ const list = [
     url: "https://portfolio2025-delta-seven.vercel.app/",
     ttl: "Portfolio",
     tags: ["Next.js", "Blender"],
-    comment: "Next.js × Blender で制作。1分で伝わるポートフォリオ",
+    comment: "Next.js × Blender で制作。1分で伝わるポートフォリオ。",
   },
   {
     thumb: "/works/nowledge.png",
@@ -33,7 +33,7 @@ const list = [
     ttl: "Beams Cultuart",
     tags: ["Wordpress"],
     comment:
-      "カルチャー情報を発信するBeamsサイトをWordPressでリニューアルし、カテゴリ動線を最適化。",
+      "カルチャー情報を発信するBeamsのメディアサイトをWordPressでリニューアルし、カテゴリ動線を最適化。",
   },
   {
     thumb: "/works/nikoand.png",
@@ -57,7 +57,7 @@ const list = [
     ttl: "東京経済大学",
     tags: ["Movabletype7"],
     comment:
-      "Movable Type7を学びながら構築し、ディレクション会社と連携して開発した大学サイト",
+      "Movable Type7を学びながら構築し、ディレクション会社と連携して開発した大学サイト。",
   },
   {
     thumb: "/works/kidsattic.png",
