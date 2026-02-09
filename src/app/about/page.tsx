@@ -6,7 +6,6 @@ import {
   Columns3Cog,
   Box,
   ToolCase,
-  GraduationCap,
   Wrench,
   History,
   SquareArrowRight,
@@ -17,7 +16,6 @@ import {
   MicVocal,
   Clapperboard,
   Annoyed,
-  Laugh,
 } from "lucide-react";
 
 const SkillList = [
@@ -49,19 +47,13 @@ const SkillList = [
     icon: Box,
     color: "#74e295",
     name: "3D",
-    desc: "Three.js / WebGL / Blender",
+    desc: "Three.js / Blender",
   },
   {
     icon: ToolCase,
     color: "#b074e2",
     name: "ツール",
     desc: "Windows PC / MacBook / GitHub / VSCode / Figma / Photoshop / Illustrator / ChatGPT",
-  },
-  {
-    icon: GraduationCap,
-    color: "#bababa",
-    name: "学習中...",
-    desc: "Advanced Blender / Three.js / React",
   },
 ];
 

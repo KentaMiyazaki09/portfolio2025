@@ -3,3 +3,10 @@ export type Work = {
   ttl: string;
   img: string;
 };
+
+export type ListItem = {
+  thumb: string;
+  url: string;
+  ttl: string;
+  comment: string;
+};
