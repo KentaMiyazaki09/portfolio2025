@@ -41,13 +41,13 @@ const SkillList = [
     icon: Wrench,
     color: "#d1bb82",
     name: "開発環境",
-    desc: "Webpack / Gulp",
+    desc: "Webpack / Gulp / Vite",
   },
   {
     icon: Box,
     color: "#74e295",
     name: "3D",
-    desc: "Three.js / Blender",
+    desc: "WebGL / Three.js / Blender",
   },
   {
     icon: ToolCase,
