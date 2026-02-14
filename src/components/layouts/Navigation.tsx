@@ -18,9 +18,9 @@ import { useSharedState } from "@/context/SharedStateProvider";
 import Link from "next/link";
 
 const links = [
-  { href: "/", label: "HOME" },
-  { href: "/about", label: "ABOUT" },
-  { href: "/works", label: "WORKS" },
+  { href: "/", label: "HOME", id: "cafe" },
+  { href: "/about", label: "ABOUT", id: "art_eggs" },
+  { href: "/works", label: "WORKS", id: "10_room" },
 ];
 
 const tick = (time: number) =>
@@ -30,6 +30,8 @@ const Navigation = () => {
   const pathname = usePathname();
 
   const [clickable, setClickable] = useState(true);
+
+  const { setSelectedId } = useSharedState();
 
   const toggleLockMenu = async () => {
     if (!clickable) return;
@@ -67,6 +69,7 @@ const Navigation = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   goTo(link.href);
+                  setSelectedId(link.id);
                 }}
               >
                 {link.label}
