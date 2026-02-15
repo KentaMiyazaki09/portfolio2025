@@ -21,7 +21,7 @@ type ModelProps = {
 const Model: React.FC<ModelProps> = ({
   url,
   position = [0, -2, 0],
-  rotation = [Math.PI / 180, -0.5, 0],
+  rotation = [0, 0, 0],
 }) => {
   const group = useRef<Group>(null!);
 

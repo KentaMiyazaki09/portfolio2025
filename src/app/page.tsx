@@ -1,4 +1,3 @@
-import Popover3DList from "@/components/atoms/Popover3DList";
 import SwiperToRotateHint from "@/components/atoms/SwiperToRotateHint";
 import Styles from "@/styles/page.module.css";
 
@@ -16,8 +15,6 @@ const TopPage = () => (
     </div>
 
     <SwiperToRotateHint />
-
-    <Popover3DList />
   </div>
 );
 

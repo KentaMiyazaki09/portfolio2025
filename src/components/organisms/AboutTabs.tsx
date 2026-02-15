@@ -123,11 +123,11 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
             </div>
             <div className="grid gap-3">
               <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-200">
-                1995年生まれ。フロントエンジニア。
+                1995年生まれ。フロントエンドエンジニア。
                 <br />
-                視覚や感覚的な表現に落とし込むのが好きです。
+                Reactを軸に、UI設計・状態管理・アニメーション実装まで一気通貫で作るのが得意です。
                 <br />
-                React、WebGL・Blenderを勉強中。
+                Next.jsも継続して学びつつ、息抜きにWebGLも楽しんでいます。
               </CardDescription>
             </div>
           </CardContent>
