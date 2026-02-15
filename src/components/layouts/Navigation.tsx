@@ -20,7 +20,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "HOME", id: "cafe" },
   { href: "/about", label: "ABOUT", id: "art_eggs" },
-  { href: "/works", label: "WORKS", id: "10_room" },
+  { href: "/works", label: "WORKS", id: "cafe" },
 ];
 
 const tick = (time: number) =>
