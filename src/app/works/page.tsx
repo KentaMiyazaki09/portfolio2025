@@ -11,10 +11,22 @@ type Work = {
   url: string;
 };
 
+async function getWorks() {
+  try {
+    return await microcms.getList<Work>({
+      endpoint: "works",
+      customRequestInit: {
+        next: { tags: ["works"] },
+      },
+    });
+  } catch (e) {
+    console.log(`Faild to fetch Works. ${e}`);
+    return { contents: [] };
+  }
+}
+
 const WorksPage = async () => {
-  const data = await microcms.getList<Work>({
-    endpoint: "works",
-  });
+  const data = await getWorks();
 
   const list = data.contents.map((work) => ({
     thumb: work.image.url,
