@@ -5,8 +5,9 @@ export type Work = {
 };
 
 export type ListItem = {
+  id: string;
   thumb: string;
-  url: string;
+  url: string | null;
   ttl: string;
   comment: string;
 };
