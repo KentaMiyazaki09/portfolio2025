@@ -34,7 +34,7 @@ const WorksPage = async () => {
     const safeUrl = normalizeWorkUrl(work.url);
     return {
       id: work.id,
-      thumb: work.image.url ?? "",
+      thumb: work.image.url || "/no_image.jpg",
       url: safeUrl,
       ttl: work.title,
       comment: work.description,
