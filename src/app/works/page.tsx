@@ -22,7 +22,7 @@ async function getWorks() {
       },
     });
   } catch (e) {
-    console.log(`Faild to fetch Works. ${e}`);
+    console.log("Faild to fetch Works.");
     return { contents: [] };
   }
 }
@@ -34,7 +34,7 @@ const WorksPage = async () => {
     const safeUrl = normalizeWorkUrl(work.url);
     return {
       id: work.id,
-      thumb: work.image.url,
+      thumb: work.image.url ?? "",
       url: safeUrl,
       ttl: work.title,
       comment: work.description,
