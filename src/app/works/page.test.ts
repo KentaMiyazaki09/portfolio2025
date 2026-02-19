@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-// microcms import 元を mock
+// microcms import元をmock
 vi.mock("@/lib/microcms", () => {
   return {
     microcms: {
@@ -18,7 +18,8 @@ describe("getWorks", () => {
     vi.clearAllMocks();
   });
 
-  it("microcms.getListが正しい結果を返す。", async () => {
+  it("microcms.getListが成功時、正しい結果を返す。", async () => {
+    // 非同期成功を再現
     const response = {
       contents: [
         {
@@ -30,12 +31,14 @@ describe("getWorks", () => {
         },
       ],
     };
-
     (microcms.getList as any).mockResolvedValue(response);
 
     const res = await getWorks();
 
+    // 呼ばれた回数は１回だけなのを確認（二重に呼ばれていないか確認）
     expect(microcms.getList).toHaveBeenCalledTimes(1);
+
+    // 呼び出し時の引数の確認
     expect(microcms.getList).toHaveBeenCalledWith({
       endpoint: "works",
       customRequestInit: {
@@ -47,8 +50,10 @@ describe("getWorks", () => {
   });
 
   it("getListが例外を投げたら空の配列を返す。", async () => {
+    // 非同期失敗を再現
     (microcms.getList as any).mockRejectedValue(new Error("boom"));
 
+    // console.logを監視対象、ダミー化してテスト結果出力がログで汚れないようにする。
     const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
 
     const response = await getWorks();
@@ -56,6 +61,7 @@ describe("getWorks", () => {
     expect(response).toEqual({ contents: [] });
     expect(logSpy).toHaveBeenCalledWith("Faild to fetch Works.");
 
+    // console.logの状態を元に戻す
     logSpy.mockRestore();
   });
 });
