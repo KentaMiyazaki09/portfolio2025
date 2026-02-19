@@ -45,4 +45,17 @@ describe("getWorks", () => {
 
     expect(res).toEqual(response);
   });
+
+  it("getListが例外を投げたら空の配列を返す。", async () => {
+    (microcms.getList as any).mockRejectedValue(new Error("boom"));
+
+    const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+
+    const response = await getWorks();
+
+    expect(response).toEqual({ contents: [] });
+    expect(logSpy).toHaveBeenCalledWith("Faild to fetch Works.");
+
+    logSpy.mockRestore();
+  });
 });
