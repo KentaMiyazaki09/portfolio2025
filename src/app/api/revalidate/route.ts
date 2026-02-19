@@ -38,5 +38,5 @@ export async function POST(req: Request) {
   // /worksを再検証
   revalidatePath("/works");
 
-  return NextResponse.json({ revalidateTag: true, tag: "wroks" });
+  return NextResponse.json({ revalidatePath: true, tag: "works" });
 }
