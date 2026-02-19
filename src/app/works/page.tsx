@@ -13,7 +13,7 @@ type Work = {
   url: string;
 };
 
-async function getWorks() {
+export async function getWorks() {
   try {
     return await microcms.getList<Work>({
       endpoint: "works",
