@@ -1,3 +1,7 @@
+/**
+ * microCMS WebhookのHMAC署名を検証し、正当な更新通知のときだけ/works をrevalidateする
+ */
+
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
