@@ -2,7 +2,7 @@
  * microCMS WebhookのHMAC署名を検証し、正当な更新通知のときだけ/works をrevalidateする
  */
 
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
 import crypto from "crypto";
@@ -31,16 +31,16 @@ export async function POST(req: Request) {
     .update(body)
     .digest("hex");
 
-  const compare =
+  const comparison =
     signature.length === expected.length &&
     crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected));
 
-  if (!compare) {
+  if (!comparison) {
     return NextResponse.json({ message: "Invalid signature" }, { status: 401 });
   }
 
   // /worksを再検証
-  revalidatePath("/works");
+  revalidateTag("works", { expire: 0 });
 
   return NextResponse.json({ revalidatePath: true, tag: "works" });
 }
