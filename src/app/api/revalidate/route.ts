@@ -40,7 +40,7 @@ export async function POST(req: Request) {
   }
 
   // /worksを再検証
-  revalidateTag("works", { expire: 0 });
+  revalidateTag("works", "max");
 
   return NextResponse.json({ revalidatePath: true, tag: "works" });
 }
