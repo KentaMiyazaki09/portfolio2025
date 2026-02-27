@@ -125,9 +125,9 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
               <CardDescription className="text-[clamp(0.75rem,2.5vw,1.2rem)] text-neutral-200">
                 1995年生まれ。フロントエンドエンジニア。
                 <br />
-                Reactを軸に、UI設計・状態管理・アニメーション実装まで一気通貫で作るのが得意です。
+                映画館が好きです。
                 <br />
-                Next.jsも継続して学びつつ、息抜きにWebGLも楽しんでいます。
+                息抜きにWebGLやります。
               </CardDescription>
             </div>
           </CardContent>
