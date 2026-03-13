@@ -58,6 +58,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
           Favorite
         </TabsTrigger>
       </TabsList>
+
       <TabsContent value="About">
         <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-auto scrollbar-hide">
           <CardHeader>
@@ -133,6 +134,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
           </CardContent>
         </Card>
       </TabsContent>
+
       <TabsContent value="Skill">
         <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
@@ -162,6 +164,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
           </CardContent>
         </Card>
       </TabsContent>
+
       <TabsContent value="QandA">
         <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>
@@ -191,6 +194,7 @@ const AboutTabs = ({ skillList, QandA, favo }: AboutTabsProps) => (
           </CardContent>
         </Card>
       </TabsContent>
+
       <TabsContent value="Favo">
         <Card className="will-change-[backdrop-filter] bg-black/60 text-neutral-50 overflow-y-auto h-80 scrollbar-hide">
           <CardHeader>

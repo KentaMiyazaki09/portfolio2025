@@ -22,26 +22,14 @@ const SkillList = [
   {
     icon: Globe,
     color: "#3654ce",
-    name: "開発言語",
-    desc: "HTML / CSS / JavaScript / TypeScript",
+    name: "スキル Webサイト開発",
+    desc: "EJS / HTML / Sass / JavaScript / Webpack / Gulp / MovableType7 / WordPress",
   },
   {
     icon: SquareDashedBottomCode,
     color: "#e2747a",
-    name: "フレームワーク",
-    desc: "React / Next.js / Tailwind CSS",
-  },
-  {
-    icon: Columns3Cog,
-    color: "#bbbf82",
-    name: "その他スキル",
-    desc: "EJS / Sass / MovableType7 / WordPress / Shopify（Liquid）/ Netlify / Vercel / テストツール（Vitest）",
-  },
-  {
-    icon: Wrench,
-    color: "#d1bb82",
-    name: "開発環境",
-    desc: "Webpack / Gulp / Vite",
+    name: "スキル React開発",
+    desc: "React / Next.js / TypeScript / Tailwind CSS / Vercel / Vite（React） / Turbopack（Next.js） / Vitest",
   },
   {
     icon: Box,
@@ -53,7 +41,7 @@ const SkillList = [
     icon: ToolCase,
     color: "#b074e2",
     name: "ツール",
-    desc: "Windows PC / MacBook / GitHub / VSCode / Figma / Photoshop / Illustrator / ChatGPT",
+    desc: "GitHub / VSCode / Figma / ChatGPT",
   },
 ];
 
@@ -65,22 +53,10 @@ const QandA = [
     desc: "Amaz◯nで買い物している時に「どうやって動いてるのだろう」と興味を持ったのがきっかけです。ちょうど世間にスマホが馴染み始めた頃だったので、今後はWebやアプリ開発は需要が高そうだ、と感じた。",
   },
   {
-    icon: SquareArrowRight,
-    color: "#e2699a",
-    name: "次の目標",
-    desc: "引き続きフロントエンド技術の向上、サブで3DやUX、興味のあるものを学習。技術だけでなく、新しい刺激や人とのつながりを通して実装・表現の幅を広げていきたいです。",
-  },
-  {
     icon: Box,
     color: "#7d69e2",
     name: "WebGLやBlenderを始めた理由",
-    desc: "「JavaScriptの知識あればインタラクティブな実装できるな」と考えたのがきっかけです。コードを書く以外のことをするのは良い息抜きになって面白いです。",
-  },
-  {
-    icon: Annoyed,
-    color: "#bdbdbd",
-    name: "課題に感じていること",
-    desc: "アプリケーション開発や上流工程にも関わっていきたい一方で、経験不足も感じています。将来的にはバックエンド、テスト実装なども意識して学んでいきたいです。",
+    desc: "コードを書く以外のことをするのは良い息抜きになって面白いなと感じたため。また非エンジニアの知り合いとの話題にもできるので。",
   },
 ];
 
